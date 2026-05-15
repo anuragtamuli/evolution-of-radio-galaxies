@@ -1,5 +1,6 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{usual}
+\usepackage{ulem}
 % \usepackage[backend=biber,style=phys,sorting=none]{biblatex}
 % \addbibresource{ass2ref.bib}
 
@@ -9,6 +10,10 @@
 \setstretch{1.2}
 
 \newcommand{\ti}[1]{\textit{#1}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\mb}[1]{\mathbf{#1}}
 
 % ===============================================================================================================
 
@@ -28,25 +33,62 @@
 
 \newpage
 
+\chapter{Useful Terminology and Concepts}
+
+\section{Basic Terminology}
+
+\begin{itemize}[leftmargin=*, label={}, itemsep=0.8em]
+  \item \tb{Luminosity} ($L$): The total amount of electromagnetic \textbf{energy emitted per unit time} by an astronomical object. \red{$L_B$ anol needs to be mentioned when we bring up colour filters.}
+    
+  \item \tb{Radiant Flux Density} ($S$): The total amount of electromagnetic \textbf{energy per unit area per unit time} by an astronomical object. In other words, it is the luminosity per unit area. According to this definition, at a distance $r$ from a star (say):
+    \begin{align*}
+      S = \frac{L}{4 \pi r^2}
+    \end{align*}
+  \item 
+\end{itemize}
+
+\section{The Magnitude Scale}
+Our eyes judge brightness according in a logarithmic fashion, similar to hearing. This means that what we perceive to be twice as bright is actually emitting a lot more than just twice the radiant energy. Due to this, optical astronomy uses `magnitude' as a scale of brightness.
+
+\subsection{Apparent Magnitude}
+For two sources with fluxes\footnote{Here, we are talking about radiant flux density, defined by energy emitted per unit area per unit time, i.e. luminosity per unit area.} $S_1$ and $S_2$, their \ti{apparent magnitudes} $m_1$ and $m_2$ are defined as:
+\begin{align*}
+  m_1 - m_2 = - 2.5 \log(\frac{S_1}{S_2})
+\end{align*}
+This means that a brighter object will have a smaller apparent magnitude. \uwave{The factor of 2.5 is chosen to most accurately match the historically calculated magnitudes.}
+
+\subsection{Filters and Colour}
+Optical observations are performed with a combination of filters and detectors. Since the spectral energy distribution is not necessarily uniform over all wavelengths, apparent magnitudes are defined for each of these filters, i.e. apparent magnitude is a function of the wavelength of light being considered.
+\begin{align*}
+  m = m(\lambda) \equiv m_X \equiv X
+\end{align*}
+where $X$ is the filter for a specific wavelength $\lambda$.
+  
+% ===============================================================================================================
+
 \chapter{The World of Galaxies}
 
 Ever since the Hubble Deep Field image, the whole of humanity has set their sight to discover what lies far beyond they could ever comprehend. When dealing with extragalactic astronomy, the most notable entities are arguably other galaxies, and this is a chapter all about them.
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{hdf.jpg}
+  \includegraphics[width=0.8\textwidth]{images/hdf.jpg}
   \caption{\small The Hubble Deep Field image produced by \ti{Edwin Hubble} changed the world forever. All the dots in the image are galaxies, not stars.}
 \end{figure}
 
 \clearpage
 
+The light from 'normal galaxies' is mainly the sum of all the light emitted by the stars present within it. 
+
 \section{Classification of Galaxies}
+
+Galaxies \red{dafds}
 
 \subsection{Morphological Classification}
 On the basis of shape or morphology, galaxies have been historically classified into the following categories:
 
 \begin{enumerate}
-  \item \textbf{Elliptical Galaxies}: Their isophotes\footnote{sdsds} resemble ellipses. They are further subclassified according to the \textbf{ellipticity} of the isophotes: $\epsilon = 1 - b/a$, where a, b are the semi-major and semi-minor axes. Then we define $N = 10 \epsilon$ which gives us the representation EN for elliptical galaxies. An E7 galaxy is an elliptical galaxy with $b/a = 0.3$.
+  \item \textbf{Elliptical Galaxies}: Their isophotes\footnote{Isophotes are contours along which the surface brightness is constant.} resemble ellipses. They are further subclassified according to the \textbf{ellipticity} of the isophotes: $\epsilon = 1 - b/a$, where a, b are the semi-major and semi-minor axes. Then we define $N = 10 \epsilon$ which gives us the representation EN for elliptical galaxies. An E7 galaxy is an elliptical galaxy with $b/a = 0.3$.
   \item \textbf{Spiral Galaxies}: Their isophotes look like spirals. 
 \end{enumerate}
 
