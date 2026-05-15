@@ -2,29 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Evolution of Radio Galaxies</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Probing the Evolution of Radio Galaxies</title>
+
   <style>
-    body {
-      max-width: 720px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-      font-family: system-ui, sans-serif;
-      line-height: 1.5;
+    :root {
+      color-scheme: dark;
     }
-    a {
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: white;
+
+      background-image:
+        linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.62)),
+        url("./hubble-udf.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 6vw, 3rem);
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+      opacity: 0.85;
+    }
+
+    .links {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+    }
+
+    a.card {
       display: block;
-      margin: 0.75rem 0;
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+    }
+
+    a.card:hover {
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .title {
       font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .desc {
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+      opacity: 0.75;
     }
   </style>
 </head>
+
 <body>
-    <h1> Probing the Evolution of Radio Galaxies </h1>
-    <h4> This has the relevant documents for my project under Dr. Veeresh Singh. </h4>
+  <main>
+    <h1>Evolution of Radio Galaxies</h1>
 
-    <p>Public PDFs:</p>
+    <p>
+      Notes and discussions from my '26 summer project at PRL Thaltej under Dr. Veeresh Singh on the evolution of radio galaxies.
+    </p>
 
-    <a href="docs/notes.pdf">Notes</a>
-    <a href="docs/discussions.pdf">Informal Record</a>
+    <section class="links">
+      <a class="card" href="./docs/notes.pdf">
+        <div class="title">Notes</div>
+        <div class="desc">Main record of notes for the project.</div>
+      </a>
+
+      <a class="card" href="./docs/discussions.pdf">
+        <div class="title">Informal Record</div>
+        <div class="desc">Discussions, doubts etc in an informal manner.</div>
+      </a>
+    </section>
+  </main>
 </body>
 </html>
