@@ -1,0 +1,101 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{usual}
+\usepackage[backend=biber,style=phys,sorting=none]{biblatex}
+\addbibresource{discrefs.bib}
+
+\usepackage[a4paper, margin=1in]{geometry}
+
+\setlength{\parindent}{0pt}
+\setstretch{1.2}
+
+\newcommand{\mb}{\text{M}_\text{B}}
+
+\newcommand{\ti}[1]{\textit{#1}}
+
+% ===============================================================================================================
+
+\title{Discussions regarding ``Evolution of Radio Galaxies''}
+\author{tamuli}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Doubts, discussions, allat gets documented and recorded hereeeeeee.
+\end{abstract}
+
+\tableofcontents
+
+\newpage
+
+\section{Would galaxies look the same for different lights?}
+The morphological basis of galaxies, as far as I can tell, is based on the isophotes of visible light. The only reason visible light was chosen was probably because we can see visible light and that's fair, but do these galaxies appear the same in different lights? Is there any advantage to the classification being based on visual spectrum?
+
+% ===============================================================================================================
+
+\section{No massive luminous stars in red galaxies?}
+
+\ti{The mass-to-light ratio of a red stellar population is larger than that of a blue population, since the former no longer contains massive luminous stars.}
+
+\vspace{1em}
+
+How was that inference made? I didn't get it.
+
+\subsection*{Explanation}
+It is simply that young stars are more luminous and massive and they \ti{supposedly} get smaller and lose their energy. I still have to read this stuff so I'm not a 100\% sure, but it seems to be the reason. Now since red stars are old (lower energy than when they were young since they burnt a lot of it already, that's why longer wavelength, red), they aren't massive and luminous.
+
+\section{Basis of abcd classification of spiral galaxies?}
+
+Spiral galaxies all appear blue because they're full of young stars in general. So how do you differentiate between them? \ti{Schneider} mentions that it is on the basis of the brightness ratio of bulge to disc. However, there's also a seemingly direct correlation with tightness of spiral arms. Is this because greater brightness of bulge corresponds to a more massive bulge?
+
+\subsection*{Research}
+The abstract of \href{https://arxiv.org/abs/1904.11436}{this paper} talks about how the classification is a combination of both bulge size... wait a second... size?? then why was \ti{Schneider} talking about bulge to disc brightness ratio??? I am like more confused than ever about this honestly.
+
+\vspace{1em}
+
+This paper says that the clasification is based on both bulge size and tightness of the spirals. There is no mention of the brightness of bulge. Anyway, this paper also claims that there isn't exactly a great correlation between bulge size and spiral arm tightness, especially for smaller bulges.
+
+% ===============================================================================================================
+
+\section{Core? Extra light in cores? Extra light in light deficits???}
+
+\ti{In this case, the central brightness profile is said to have a core, or a light deficit (relative to the extrapolation of the de Vaucouleurs profile towards the center). Ellipticals with a core are typically very luminous (and correspondingly have a high stellar mass). Also the opposite effect occurs: some ellipticals, typically those of lower luminosity, have an excess of light in their cores, relative to the extrapolation of the brightness profile fit at larger radii.} Pg. 109-110.
+
+\subsection*{Explanation}
+Okay, so a core in the brightness profile refers to a light deficit around the central ``core region'' of the galaxy, which results in the plateauing under the de Vaucouleurs profile for the galaxy.
+
+\vspace{1em}
+
+There could be extra light in the physical core region of the galaxy, not to be confused with the core (light deficit) of the brightness profile, that leads to a higher value for brightness relative to the de Vaucouleurs fit.
+
+\vspace{1em}
+
+I know... it's stupid. This is lowk notoriously bad for the book to not clarify istg.
+
+\section{Why does the galactic dust look red? What is its composition?}
+
+% ===============================================================================================================
+
+\section{How does H\RN{1} indicate cold gas?}
+
+\subsection*{Explanation}
+H\RN{1} is atomic hydrogen. This \href{http://hyperphysics.phy-astr.gsu.edu/hbase/quantum/h21.html#c1}{Hyperphysics webpage} explains the 21cm Hydrogen line which emerges from the hyperfine structure (involving both the electron and nuclear spins, the jump between them). Since this requires so less energy, this is only really observed for low temperatures ($\sim$100 K). This thus becomes an indicator of cold gas.
+
+% ===============================================================================================================
+
+\section{Why do normal ellipticals get dimmer for being more blue?}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{dwarf vs normal ellipticals graph.png}
+\end{figure}
+
+In the second graph here, we can see that for normal ellipticals, a more negative $\mb$ corresponds to a lower surface brightness? According to the Boltzmann law, shouldn't they have more surface brightness instead?
+
+% ===============================================================================================================
+
+\printbibliography
+
+\end{document}
