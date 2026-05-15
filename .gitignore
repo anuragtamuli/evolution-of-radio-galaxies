@@ -21,3 +21,4 @@ Radio Galaxies*.pdf
 
 # optional local build folders
 build/
+.ssh/

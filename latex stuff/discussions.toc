@@ -1,7 +1,0 @@
-\contentsline {section}{\numberline {1}Would galaxies look the same for different lights?}{2}{section.1}%
-\contentsline {section}{\numberline {2}No massive luminous stars in red galaxies?}{2}{section.2}%
-\contentsline {section}{\numberline {3}Basis of abcd classification of spiral galaxies?}{2}{section.3}%
-\contentsline {section}{\numberline {4}Core? Extra light in cores? Extra light in light deficits???}{3}{section.4}%
-\contentsline {section}{\numberline {5}Why does the galactic dust look red? What is its composition?}{3}{section.5}%
-\contentsline {section}{\numberline {6}How does H\RN {1} indicate cold gas?}{3}{section.6}%
-\contentsline {section}{\numberline {7}Why do normal ellipticals get dimmer for being more blue?}{4}{section.7}%
