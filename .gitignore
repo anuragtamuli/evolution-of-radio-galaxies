@@ -18,6 +18,7 @@
 # don't publish books/reference PDFs
 Peter Schneider*.pdf
 Radio Galaxies*.pdf
+An introduction*.pdf
 
 # optional local build folders
 build/
