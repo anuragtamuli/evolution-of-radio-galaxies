@@ -1,0 +1,23 @@
+*.aux
+*.bcf
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.bbl
+*.blg
+*.xdv
+*.dvi
+*.nav
+*.snm
+*.vrb
+
+# don't publish books/reference PDFs
+Peter Schneider*.pdf
+Radio Galaxies*.pdf
+
+# optional local build folders
+build/
