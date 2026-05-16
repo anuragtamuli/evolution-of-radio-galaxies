@@ -40,7 +40,6 @@
     \begin{align*}
       S = \frac{L}{4 \pi r^2}
     \end{align*}
-  \item 
 \end{itemize}
 
 \section{The Magnitude Scale}
@@ -58,7 +57,19 @@ Optical observations are performed with a combination of filters and detectors. 
 \begin{align*}
   m = m(\lambda) \equiv m_X \equiv X
 \end{align*}
-where $X$ is the filter for a specific wavelength $\lambda$.
+where $X$ is the filter for some specific wavelength $\lambda$.
+
+\vspace{1em}
+
+The magnitudes of the different filters are related, by definition, as $U = B = V = R = I = \dots$ for main sequence stars of spectral type A0, i.e., every colour index for such a star is defined to be zero.
+
+\vspace{1em}
+
+For a more precise definition, let $T_X(\nu)$ be the transmission curve of the filter-detector system. $T_X(\nu)$ specifies which fraction of the incoming photons with frequency are registered by the detector. The apparent magnitude of a source with spectral flux $S_\nu$ is then:
+\begin{align*}
+  m_X = -2.5 \log\left(\frac{\int \dd \nu \ T_X(\nu) S_\nu}{\int \dd \nu \ T_X(\nu)}\right) + \text{const.}
+\end{align*}
+The argument of the logarithm is the average flux received in total for the entire EM spectrum. The constant is determined from reference stars.
   
 % ===============================================================================================================
 
@@ -74,7 +85,7 @@ Ever since the Hubble Deep Field image, the whole of humanity has set their sigh
 
 \clearpage
 
-The light from 'normal galaxies' is mainly the sum of all the light emitted by the stars present within it. 
+The light from 'normal galaxies' is mainly the sum of all the light emitted by the stars present within it. \red{need to add note about age of stars anol but for that I need to add the section about stars at the beginning.}
 
 \section{Classification of Galaxies}
 
