@@ -89,7 +89,7 @@ Another commonly used definition, does not consider the spectral energy distribu
   \caption{\small This shows the transmission curves of different spectra. At the bottom, we have the spectra of 3 stars with different effective temperatures.}
 \end{figure}
 
-\section{Absolute Magnitude}
+\subsection{Absolute Magnitude}
 Since apparent magnitude does not reveal any information about the luminosity of the body since it inherently depends on the distance of the body from Earth. If we are at a distance $D$ from a body and $L_\nu$ (energy per unit time for unit frequency range) is its specific luminosity, the flux for isotropic emission is given by:
 \begin{align*}
   S_\nu = \frac{L_\nu}{4 \pi D^2}
@@ -100,7 +100,7 @@ To reveal the physical properties of the source itself irrespective of how it ap
 \end{align*}
 where $\mu$ is called the \ti{distance modulus}. Hence, the latter is a logarithmic measure of the distance of a source: $\mu = 0$ for $D = 10$ pc, $\mu = 10$ for $D = 1$ kpc, and $\mu = 25$ for $D = 1$ Mpc. The difference between apparent and absolute magnitude is independent of the filter choice, and it equals the distance modulus if no extinction is present. In general, this difference is modified by the wavelength (and thus filter) dependent extinction coefficient.
 
-\section{Bolometric Parameters}
+\subsection{Bolometric Parameters}
 The total flux S and luminosity L over all frequencies are naturally be defined as:
 \begin{align*}
   S = \int\limits_0^\infty S_\nu \ \dd \nu; \hspace{4ex} L = \int\limits_0^\infty L_\nu \ \dd \nu
@@ -114,6 +114,11 @@ The constants can be determined from reference stars. In particular, using the s
 \begin{align*}
   M_\text{\Sun bol} = m_\text{\Sun bol} - \mu = 4.74
 \end{align*}
+From this, we obtain:
+\begin{align*}
+  M_\text{bol} = 4.74 - 2.5 \log \left( \frac{L}{L_\text{\Sun}} \right)
+\end{align*}
+where the luminosity of the sun is $L_\text{\Sun} = 3.85 \times 10^{33}$ erg s$^{-1}$.
   
 % ===============================================================================================================
 
