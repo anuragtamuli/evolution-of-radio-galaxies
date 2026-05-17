@@ -1,6 +1,7 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{usual}
 \usepackage{ulem}
+\usepackage{starfont}
 % \usepackage[backend=biber,style=phys,sorting=none]{biblatex}
 % \addbibresource{ass2ref.bib}
 
@@ -65,7 +66,7 @@ Optical observations are performed with a combination of filters and detectors. 
 \begin{align*}
   m = m(\lambda) \equiv m_X \equiv X
 \end{align*}
-where $X$ is the filter for some specific wavelength $\lambda$. On a side note, $L_X$ similarly refers to the luminosity detected by the X-band filter.
+where $X$ is the filter for some specific wavelength $\lambda$.
 
 \vspace{1em}
 
@@ -97,8 +98,22 @@ To reveal the physical properties of the source itself irrespective of how it ap
 \begin{align*}
   m_X - M_X = 5 \log \left( \frac{D}{1 pc} \right) - 5 \equiv \mu
 \end{align*}
-where $\mu$ is called the \ti{distance modulus}.
+where $\mu$ is called the \ti{distance modulus}. Hence, the latter is a logarithmic measure of the distance of a source: $\mu = 0$ for $D = 10$ pc, $\mu = 10$ for $D = 1$ kpc, and $\mu = 25$ for $D = 1$ Mpc. The difference between apparent and absolute magnitude is independent of the filter choice, and it equals the distance modulus if no extinction is present. In general, this difference is modified by the wavelength (and thus filter) dependent extinction coefficient.
 
+\section{Bolometric Parameters}
+The total flux S and luminosity L over all frequencies are naturally be defined as:
+\begin{align*}
+  S = \int\limits_0^\infty S_\nu \ \dd \nu; \hspace{4ex} L = \int\limits_0^\infty L_\nu \ \dd \nu
+\end{align*}
+These define the \ti{bolometric magnitudes}:
+\begin{align*}
+  m_\text{bol} = -2.5 \log(S) + \text{const.} \\
+  M_\text{bol} = -2.5 \log(L) + \text{const.}
+\end{align*}
+The constants can be determined from reference stars. In particular, using the sun as reference with $m_\text{\Sun bol} = -26.83$ and the distance of 1 a.u. gives $\mu = -31.47$, thus giving us:
+\begin{align*}
+  M_\text{\Sun bol} = m_\text{\Sun bol} - \mu = 4.74
+\end{align*}
   
 % ===============================================================================================================
 
