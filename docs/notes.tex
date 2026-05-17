@@ -34,25 +34,29 @@
 \section{Basic Terminology}
 
 \begin{enumerate}[leftmargin=*, label=\roman*., itemsep=0.8em]
-  \item \tb{Luminosity} ($L$): The total amount of electromagnetic \textbf{energy emitted per unit time} by an astronomical object. \red{$L_B$ anol needs to be mentioned when we bring up colour filters.}
+  \item \red{add parsec defn}
+    
+  \item \tb{Luminosity} ($L$): The total amount of electromagnetic \textbf{energy emitted per unit time} by an astronomical object.
     
   \item \tb{Radiant Flux Density} ($S$): The total amount of electromagnetic \textbf{energy per unit area per unit time} by an astronomical object. In other words, it is the luminosity per unit area. According to this definition, at a distance $r$ from a star (say):
     \begin{align*}
       S = \frac{L}{4 \pi r^2}
     \end{align*}
     
-  \item \tb{Effective Temperature}:
-\end{enumerate}
+  \item \tb{Effective Temperature}: The effective temperature of a body such as a star or planet is the temperature of a black body that would emit the same total energy as electromagnetic radiation.
+    
+  \item \tb{Specific Luminosity} ($L_\nu$): The energy emitted per unit time for a unit frequency range.
+\end{enumerate} \label{def: spec luminosity}
 
 \section{The Magnitude Scale}
 Our eyes judge brightness according in a logarithmic fashion, similar to hearing. This means that what we perceive to be twice as bright is actually emitting a lot more than just twice the radiant energy. Due to this, optical astronomy uses `magnitude' as a scale of brightness.
 
 \subsection{Apparent Magnitude}
-For two sources with fluxes\footnote{Here, we are talking about radiant flux density, defined by energy emitted per unit area per unit time, i.e. luminosity per unit area.} $S_1$ and $S_2$, their \ti{apparent magnitudes} $m_1$ and $m_2$ are defined as:
+The purpose of apparent magnitude is to closely match visually reported magnitudes and quantify these historical observations. It is a measure for the radiant flux S from a body. For two sources with fluxes $S_1$ and $S_2$, their \ti{apparent magnitudes} $m_1$ and $m_2$ are defined as:
 \begin{align*}
   m_1 - m_2 = - 2.5 \log(\frac{S_1}{S_2})
 \end{align*}
-This means that a brighter object will have a smaller apparent magnitude. \uwave{The factor of 2.5 is chosen to most accurately match the historically calculated magnitudes.}
+This means that a brighter object will have a smaller apparent magnitude. \uwave{The factor of 2.5 is chosen to most accurately match the historically calculated magnitudes.} A more \ti{absolute} definition can be found below in the next section, which depends on the filter in consideration.
 
 \subsection{Filters and Colour}
 Optical observations are performed with a combination of filters and detectors. Since the spectral energy distribution is not necessarily uniform over all wavelengths, apparent magnitudes are defined for each of these filters, i.e. apparent magnitude is a function of the wavelength of light being considered.
@@ -61,7 +65,7 @@ Optical observations are performed with a combination of filters and detectors. 
 \begin{align*}
   m = m(\lambda) \equiv m_X \equiv X
 \end{align*}
-where $X$ is the filter for some specific wavelength $\lambda$.
+where $X$ is the filter for some specific wavelength $\lambda$. On a side note, $L_X$ similarly refers to the luminosity detected by the X-band filter.
 
 \vspace{1em}
 
@@ -83,6 +87,18 @@ Another commonly used definition, does not consider the spectral energy distribu
   \includegraphics[width=0.7\textwidth]{images/filters.png}
   \caption{\small This shows the transmission curves of different spectra. At the bottom, we have the spectra of 3 stars with different effective temperatures.}
 \end{figure}
+
+\section{Absolute Magnitude}
+Since apparent magnitude does not reveal any information about the luminosity of the body since it inherently depends on the distance of the body from Earth. If we are at a distance $D$ from a body and $L_\nu$ (energy per unit time for unit frequency range) is its specific luminosity, the flux for isotropic emission is given by:
+\begin{align*}
+  S_\nu = \frac{L_\nu}{4 \pi D^2}
+\end{align*}
+To reveal the physical properties of the source itself irrespective of how it appears to us, we define absolute magnitude, $M_X$, where $X$ refers to the filter under consideration. It is defined to be the apparent magnitude of a body at a distance of 10 pc from us. Its relation to the apparent magnitude is as follows:
+\begin{align*}
+  m_X - M_X = 5 \log \left( \frac{D}{1 pc} \right) - 5 \equiv \mu
+\end{align*}
+where $\mu$ is called the \ti{distance modulus}.
+
   
 % ===============================================================================================================
 
