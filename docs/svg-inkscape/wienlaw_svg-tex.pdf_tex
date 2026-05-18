@@ -1,0 +1,75 @@
+%% Creator: Inkscape 1.4.3 (0d15f75042, 2025-12-25), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'wienlaw_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{540bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.83359582)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{wienlaw_svg-tex.pdf}}%
+    \put(0.14486112,0.08637356){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}0\end{tabular}}}}%
+    \put(0.14486112,0.23651247){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}2E+11\end{tabular}}}}%
+    \put(0.14486112,0.3865125){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}4E+11\end{tabular}}}}%
+    \put(0.14486112,0.53665143){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}6E+11\end{tabular}}}}%
+    \put(0.14486112,0.68679025){\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}8E+11\end{tabular}}}}%
+    \put(0.15833333,0.05720692){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}0\end{tabular}}}}%
+    \put(0.34472224,0.05720692){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}500\end{tabular}}}}%
+    \put(0.53111111,0.05720692){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1000\end{tabular}}}}%
+    \put(0.71750006,0.05720692){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}1500\end{tabular}}}}%
+    \put(0.90388885,0.05720692){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}2000\end{tabular}}}}%
+    \put(0.04236111,0.44998473){\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Spectral energy density / kJ/m3nm\end{tabular}}}}}%
+    \put(0.53111111,0.01345689){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Wavelength / nm\end{tabular}}}}%
+    \put(0.46708331,0.16817909){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}3500K\end{tabular}}}}%
+    \put(0.42944448,0.23248475){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}4000K\end{tabular}}}}%
+    \put(0.39930557,0.33817914){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}4500K\end{tabular}}}}%
+    \put(0.37666669,0.50290139){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5000K\end{tabular}}}}%
+    \put(0.36166666,0.74692918){\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}5500K\end{tabular}}}}%
+  \end{picture}%
+\endgroup%

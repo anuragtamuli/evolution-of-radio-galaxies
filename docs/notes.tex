@@ -2,7 +2,7 @@
 \usepackage{usual}
 \usepackage{ulem}
 \usepackage{starfont}
-% \usepackage[backend=biber,style=phys,sorting=none]{biblatex}
+\usepackage[backend=biber,style=phys,sorting=none]{biblatex}
 % \addbibresource{ass2ref.bib}
 
 \usepackage[a4paper, margin=1in]{geometry}
@@ -32,7 +32,15 @@
 
 \chapter{Useful Terminology and Concepts}
 
+\red{\textbf{TODO}}
+
+\begin{itemize}
+  \item add section for atomic and molecular spectral lines, H alpha, cool gas, all of that stuff.
+\end{itemize}
+
 \section{Basic Terminology}
+
+\red{need to add magnitude concise defns, colour index followed.}
 
 \begin{enumerate}[leftmargin=*, label=\roman*., itemsep=0.8em]
   \item \red{add parsec defn}
@@ -44,10 +52,32 @@
       S = \frac{L}{4 \pi D^2}
     \end{align*}
     
-  \item \tb{Effective Temperature} ($T_\text{eff}$): The effective temperature of a body such as a star or planet is the temperature of a black body of the same radius that would emit the same total energy as electromagnetic radiation.
+  \item \tb{Effective Temperature} ($T_\text{eff}$): The effective temperature of a body such as a star or planet is the temperature of a black body of the same radius that would emit the same total energy as electromagnetic radiation. \label{def:effective temp}
+    
+  \item \tb{Colour Temperature} ($T_c$): The temperature of a black body such that it has the same colour index as that of an astral body. \label{def:colour temp}
     
   \item \tb{Specific Luminosity} ($L_\nu$): The energy emitted per unit time for a unit frequency range.
-\end{enumerate} \label{def: spec luminosity}
+    
+  \item \red{add sun units, \Sun}
+\end{enumerate} \label{def:specific luminosity}
+
+
+\section{Blackbody Radiation}
+A very brief explanation of blackbody radiation includes the Stefan-Boltzmann Law which states that the flux $S$ for a perfect blackbody is given by:
+\begin{align}
+  S = \sigma T^4 \label{def:stefan-boltzmann}
+\end{align}
+where $\sigma = 5.67 \times 10^{-5}$ erg cm$^{-2}$ K$^{-4}$ s$^{-1}$ is the Stefan-Boltzmann constant.
+
+\begin{figure}[h]
+  \centering
+  \includesvg[width=0.9\textwidth]{images/wienlaw.svg}
+\end{figure}
+
+Additionally, for a blackbody, it helps to know the Wien's Displacement Law which states that the emission curve for blackbodies peak at different wavelengths which is inversely proportional to its temperature:
+\begin{align}
+  \lambda_\text{peak} \propto \frac{1}{T} \label{eq:wien law}
+\end{align}
 
 \section{The Magnitude Scale}
 Our eyes judge brightness according in a logarithmic fashion, similar to hearing. This means that what we perceive to be twice as bright is actually emitting a lot more than just twice the radiant energy. Due to this, optical astronomy uses `magnitude' as a scale of brightness.
@@ -91,9 +121,9 @@ Another commonly used definition, does not consider the spectral energy distribu
 
 \subsection{Absolute Magnitude}
 Since apparent magnitude does not reveal any information about the luminosity of the body since it inherently depends on the distance of the body from Earth. If we are at a distance $D$ from a body and $L_\nu$ (energy per unit time for unit frequency range) is its specific luminosity, the flux for isotropic emission is given by:
-\begin{align*}
-  S_\nu = \frac{L_\nu}{4 \pi D^2}
-\end{align*}
+\begin{align}
+  S_\nu = \frac{L_\nu}{4 \pi D^2} \label{eq:flux and luminosity}
+\end{align}
 To reveal the physical properties of the source itself irrespective of how it appears to us, we define absolute magnitude, $M_X$, where $X$ refers to the filter under consideration. It is defined to be the apparent magnitude of a body at a distance of 10 pc from us. Its relation to the apparent magnitude is as follows:
 \begin{align*}
   m_X - M_X = 5 \log \left( \frac{D}{1 pc} \right) - 5 \equiv \mu
@@ -125,7 +155,72 @@ where the luminosity of the sun is $L_\text{\Sun} = 3.85 \times 10^{33}$ erg s$^
 where X represents the X-band filter.
 
 \section{Stars}
-  
+Stars can be reasonably thought of as gas spheres, in the cores of which light atomic nuclei fuse into heavier ones (mostly hydrogen to helium) by thermonuclear processes, thereby producing energy. \tb{External appearance of stars} is primarily determined by their radii $R$ and their temperature $T$. \tb{Properties and evolution of stars} is primarily governed by their masses $M$.
+
+\subsection{Parameters of Stars}
+
+For a first approximation, the spectral energy distribution of a star's emission can be described by blackbody radiation, where the flux $S$ is given by the Stefan-Boltzmann equation (\ref{def:stefan-boltzmann}). Thus, the luminosity for the star at a distance $R$ is given by (\ref{eq:flux and luminosity}):
+\begin{align*}
+  L = 4 \pi R^2 \ \sigma T^4
+\end{align*}
+Stars deviate from this profile and we define effective temperature (\ref{def:effective temp}) as:
+\begin{align}
+  \sigma T_\text{eff}^4 \equiv \frac{L}{4 \pi R^2} \label{eq:eff temperature}
+\end{align}
+The luminosities can range from $10^{-4} L_\text{\Sun}$ to $10^5 L_\text{\Sun}$.
+
+\vspace{1em}
+
+The temperature of a star can be estimated from its colour. Again, to a first approximation, Wien's displacement law (\ref{eq:wien law}) can explain the colour of stars depending upon temperature. \red{mention how redshift gets factored in here, found relevant thread \href{https://physics.stackexchange.com/questions/827040/wiens-displacement-law}{here}}.
+
+\vspace{1em}
+
+Using the colour index $X - Y \equiv m_X - m_Y$ in two filters $X$ and $Y$ lets us find the colour temperature $T_c$ (\ref{def:colour temp}) of the star. For a perfect blackbody, $T_c = T_\text{eff}$ but in general they differ.
+
+\subsection{Classification of Stars}
+The Harvard sequence of stellar spectra classifies stars according to the \textbf{widths and ratios of their atomic spectral lines}. This is essentially a classification based on \textbf{colour temperature} $T_c$ \uwave{since the transitions leading to those spectral lines are directly dependent on the temperature of the region.}
+
+\vspace{1em}
+The sequence of \textbf{spectral classes} is denoted in the order O, B, A, F, G, K, M in decreasing order of colour temperature. Each spectral class is further subclassified using digits 0 to 9, again in descending order of colour temperature. For instance, our Sun is a G2 star.
+
+\newpage
+
+\begin{itemize}[label=, leftmargin=*]
+  \item \ti{Hertzsprung-Russell Diagram} (HRD): Absolute magnitude vs. spectral classes.
+  \item \ti{Colour-Magnitude Diagram} (CMD): Absolute magnitude vs. colour index (like $B-V$ or $V-I$)
+\end{itemize}
+Both of these diagrams yield a very charcteristic central result of astronomy which says that most stars are arranged along a 1-dimensional sequence - the main sequence. Luminosity $L$ vs effective temperature $T_\text{eff}$ also yields a different but very similar graph.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{images/HRDiagram.png}
+\end{figure}
+
+Based on luminosity, the stars can be classified into \textbf{luminosity classes}:
+\begin{itemize}[label=]
+  \item Class \RN{1} Supergiants; Class \RN{2} Bright giants
+  \item Class \RN{3} Giants; Class \RN{4} Subgiants
+  \item Class \RN{5} Dwarfs; Class \RN{6} Subdwarfs
+\end{itemize}
+Our sun is a luminosity class \RN{5} dwarf.
+
+\newpage
+
+Since stars exist which have, for the same spectral type and hence the same color temperature (and roughly the same effective temperature), very different luminosities, we can deduce immediately that these stars have different radii from the equation of effective temperature (\ref{eq:eff temperature}). Thus the red giants which have the same effective temperatures as the main sequence stars must have much larger radii.
+
+\vspace{1em}
+
+Spectroscopically, the width of spectral absorption lines depends on gravitational acceleration on star's surface, $g = \frac{GM}{R^2}$, according to models of stellar atmosphere. It is based on these line widths (and thus luminosity) that we obtain the different luminosity classes.
+
+\vspace{1em}
+
+If we have the distance of a star (thus its luminosity) and if its surface gravity can be derived from the line width, we can obtain the \tb{stellar mass}. For the \tb{main sequence stars}, this turns out to be approximately:
+\begin{align}
+  \frac{L}{L_\text{\Sun}} \approx \left( \frac{M}{M_\text{\Sun}} \right)^{3.5} \label{eq:stellar mass}
+\end{align}
+
+\subsection{Structure and Evolution of Stars}
+
 % ===============================================================================================================
 
 \chapter{The World of Galaxies}
