@@ -16,6 +16,9 @@
 \newcommand{\tb}[1]{\textbf{#1}}
 \newcommand{\mb}[1]{\mathbf{#1}}
 
+\newcommand{\MS}{M_\text{\Sun}}
+\newcommand{\LS}{M_\text{\Sun}}
+
 % ===============================================================================================================
 
 \title{Notes on Radio Evolution of Galaxies}
@@ -219,7 +222,50 @@ If we have the distance of a star (thus its luminosity) and if its surface gravi
   \frac{L}{L_\text{\Sun}} \approx \left( \frac{M}{M_\text{\Sun}} \right)^{3.5} \label{eq:stellar mass}
 \end{align}
 
+\subsection{Spectra of Some Stars}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{images/solarspectrum.png}
+  \caption{\small Solar Spectrum, G2 Type Star}
+\end{figure}
+
+\bigskip
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.48\textwidth]{images/O5typestar.png} \hfill \includegraphics[width=0.48\textwidth]{images/Btypestar.png}
+  \caption{\small Spectrum of an O5 Type Star (left) and B Type Stars (right).}
+\end{figure}
+
 \subsection{Structure and Evolution of Stars}
+Stars are almost spherically symmetric, so we consider its parameters as radial functions: Pressure, Density, Temperature and Chemical Composition. Stars are almost always in hydrostatic equilibrium, with the pressure fighting against its own gravitational pull.
+
+\subsubsection{Fusion at the Center and Transport of Energy}
+
+In the center of a star, the density and temperature are high enough to cause thermonuclear ignition, causing the formation of Helium from Hydrogen (4 protons combine into $^4$He nucleus). This fusion results in energy release that is transported outwards in the form of radiation transport or through convection of stellar plasma. It is then released in the form of electromagnetic waves from the star. The chemical composition is homogenous in the convection zones as they transport and mix the stellar material.
+
+\vspace{1em}
+
+A part of the energy released is in form of neutrinos that can escape unobstructed from stars because of their low cross-section\footnote{Cross-section is a measure related to the probability that a specific process will take place in a collision of two particles. \uwave{In this case, it is referring to the probability that a neutrino will interact with matter.}}.
+
+\subsubsection{Temperature Dependence of Energy Production Rate}
+
+For temperatures below around $15 \times 10^6$ K, the energy production rate is approximately proportional to $T^4$, where the reaction follows the `pp-chain'. Above that, the reaction follows the `CNO cycle' where the rate is roughly proportional to $T^{20}$.
+
+\subsubsection{Lifetime of a Star}
+Beginning with homogenous chemical composition, if the stars have masses above $\sim 0.08 \MS$, only then do they have enough temperature and pressure in their core to fuse hydrogen into helium. Otherwise, they are called brown dwarfs which aren't exactly stars in the proper sense.
+
+\vspace{1em}
+
+\begin{wrapfigure}[10]{r}{0.45\textwidth}
+  \vspace{-2em}
+  \centering
+  \includegraphics[width=0.42\textwidth]{images/zams.png}
+  \caption{\small The solid line represents the ZAMS in this temperature-luminosity diagram.}
+\end{wrapfigure}
+
+At the onset of nuclear fusion, the star is located on the Zero-Age Main Sequence (ZAMS) in the HRD. With the conversion of hydrogen into helium, the chemical composition changes and the conditions in a star will change considerably once roughly 10\% of its hydrogen is used up. At that point, the stars will move away from the main sequence.
 
 % ===============================================================================================================
 
