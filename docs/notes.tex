@@ -17,7 +17,7 @@
 \newcommand{\mb}[1]{\mathbf{#1}}
 
 \newcommand{\MS}{M_\text{\Sun}}
-\newcommand{\LS}{M_\text{\Sun}}
+\newcommand{\LS}{L_\text{\Sun}}
 
 % ===============================================================================================================
 
@@ -258,14 +258,26 @@ Beginning with homogenous chemical composition, if the stars have masses above $
 
 \vspace{1em}
 
-\begin{wrapfigure}[10]{r}{0.45\textwidth}
+\begin{wrapfigure}[20]{r}{0.45\textwidth}
   \vspace{-2em}
   \centering
   \includegraphics[width=0.42\textwidth]{images/zams.png}
   \caption{\small The solid line represents the ZAMS in this temperature-luminosity diagram.}
 \end{wrapfigure}
 
-At the onset of nuclear fusion, the star is located on the Zero-Age Main Sequence (ZAMS) in the HRD. With the conversion of hydrogen into helium, the chemical composition changes and the conditions in a star will change considerably once roughly 10\% of its hydrogen is used up. At that point, the stars will move away from the main sequence.
+At the onset of nuclear fusion, the star is located on the Zero-Age Main Sequence (ZAMS) in the HRD. With the conversion of hydrogen into helium, the chemical composition changes and the conditions in a star will change considerably once roughly 10\% of its hydrogen is used up. At that point, the stars will move away from the main sequence. This allows us to estimate the life of a star on the main sequence. The total energy produced in this phase is:
+\begin{align*}
+  E_\text{MS} = 0.1 \times M \ c^2 \times 0.007
+\end{align*}
+where $M \ c^2$ is the rest mass of the star and 0.007 is the efficiency of the conversion. We know that luminosity is energy per unit time, so this energy is equivalent to the product of the luminosity in this period with the time period $t_\text{MS}$:
+\begin{align*}
+  t_\text{MS} = \frac{E_\text{MS}}{L} \approx 8 \times 10^9 \ \frac{M/\MS}{L/\LS} \text{ yr} \approx 8 \times 10^9 \ \left( \frac{M}{\MS} \right)^{-2.5} \text{ yr}
+\end{align*}
+where we used the fact that the luminosity is a steep function of the stellar mass (\ref{eq:stellar mass}).
+
+\vspace{1em}
+
+Thus, heavier the star, lesser the time it spends on the main sequence. A G star like our sun stays in the main sequence for about 8-10 billion years, whereas an O or B star remains only for a few million years. In the course of their evolution on the main sequence, the stars move away slightly from the ZAMS in the HRD towards somewhat higher luminosities and lower effective temperatures (so towards down right in the diagram).
 
 % ===============================================================================================================
 
