@@ -1,0 +1,104 @@
+%% Creator: Inkscape 1.4.3 (0d15f75042, 2025-12-25), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Solar_spectrum_en_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{567.39697266bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.74194956)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0.09656516,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}250\end{tabular}}}}%
+    \put(0.19022245,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}500\end{tabular}}}}%
+    \put(0.28460908,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}750\end{tabular}}}}%
+    \put(0.37108279,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1000\end{tabular}}}}%
+    \put(0.46519834,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1250\end{tabular}}}}%
+    \put(0.55931389,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1500\end{tabular}}}}%
+    \put(0.65340358,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1750\end{tabular}}}}%
+    \put(0.748455,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2000\end{tabular}}}}%
+    \put(0.84257055,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2250\end{tabular}}}}%
+    \put(0.9366861,0.05846132){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2500\end{tabular}}}}%
+    \put(0.54972625,0.00888269){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Wavelength (nm)\end{tabular}}}}%
+    \put(0.54574841,0.70554651){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Spectrum of Solar Radiation (Earth)\end{tabular}}}}%
+    \put(0.0735022,0.08194567){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.05062842,0.19762666){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0.5\end{tabular}}}}%
+    \put(0.07756837,0.31304947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.05062842,0.42898858){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1.5\end{tabular}}}}%
+    \put(0.07407018,0.54441135){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.05062842,0.66035047){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2.5\end{tabular}}}}%
+    \put(0.03157051,0.37238481){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{0}\smash{\begin{tabular}[t]{c}Irradiance (W/m²/nm)\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Solar_spectrum_en_svg-tex.pdf}}%
+    \put(0.94433606,0.09918355){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.92760533,0.10874395){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}H O\end{tabular}}}}%
+    \put(0.71351036,0.20525402){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Atmospheric\\absorption bands\end{tabular}}}}%
+    \put(0.52259057,0.19233463){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}H O\end{tabular}}}}%
+    \put(0.5393213,0.18277423){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.34811313,0.10868107){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}H O\end{tabular}}}}%
+    \put(0.36484387,0.09912066){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.4174261,0.25925752){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}H O\end{tabular}}}}%
+    \put(0.43415683,0.24969711){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.69116552,0.13232855){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}H O\end{tabular}}}}%
+    \put(0.70789625,0.12276814){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.76674277,0.12302169){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}CO\end{tabular}}}}%
+    \put(0.79933541,0.11346128){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.29424603,0.15648312){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0.31097676,0.14692271){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.1085787,0.10390087){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}O\end{tabular}}}}%
+    \put(0.12530943,0.09434046){\color[rgb]{0.15294118,0,0.62745098}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.11460883,0.62978623){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}UV\end{tabular}}}}%
+    \put(0.18692717,0.62920535){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Visible\end{tabular}}}}%
+    \put(0.31095893,0.62920535){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Infrared\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Solar_spectrum_en_svg-tex.pdf}}%
+    \put(0.31045183,0.49706286){\color[rgb]{0.66666667,0.59607843,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Sunlight without atmospheric absorption\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Solar_spectrum_en_svg-tex.pdf}}%
+    \put(0.43340558,0.36577567){\color[rgb]{0.16862745,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}5778K blackbody\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Solar_spectrum_en_svg-tex.pdf}}%
+    \put(0.53142634,0.27366101){\color[rgb]{0.49803922,0.2,0.2}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Sunlight at sea level\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Solar_spectrum_en_svg-tex.pdf}}%
+  \end{picture}%
+\endgroup%

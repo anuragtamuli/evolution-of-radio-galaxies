@@ -79,8 +79,9 @@ where $\sigma = 5.67 \times 10^{-5}$ erg cm$^{-2}$ K$^{-4}$ s$^{-1}$ is the Stef
 
 Additionally, for a blackbody, it helps to know the Wien's Displacement Law which states that the emission curve for blackbodies peak at different wavelengths which is inversely proportional to its temperature:
 \begin{align}
-  \lambda_\text{peak} \propto \frac{1}{T} \label{eq:wien law}
+  \lambda_\text{peak} = \frac{b}{T} \label{eq:wien law}
 \end{align}
+where $b \approx 2.898 \times 10^6$ nm K.
 
 \section{The Magnitude Scale}
 Our eyes judge brightness according in a logarithmic fashion, similar to hearing. This means that what we perceive to be twice as bright is actually emitting a lot more than just twice the radiant energy. Due to this, optical astronomy uses `magnitude' as a scale of brightness.
@@ -186,18 +187,18 @@ The Harvard sequence of stellar spectra classifies stars according to the \textb
 \vspace{1em}
 The sequence of \textbf{spectral classes} is denoted in the order O, B, A, F, G, K, M in decreasing order of colour temperature. Each spectral class is further subclassified using digits 0 to 9, again in descending order of colour temperature. For instance, our Sun is a G2 star.
 
-\newpage
-
 \begin{itemize}[label=, leftmargin=*]
   \item \ti{Hertzsprung-Russell Diagram} (HRD): Absolute magnitude vs. spectral classes.
   \item \ti{Colour-Magnitude Diagram} (CMD): Absolute magnitude vs. colour index (like $B-V$ or $V-I$)
 \end{itemize}
 Both of these diagrams yield a very charcteristic central result of astronomy which says that most stars are arranged along a 1-dimensional sequence - the main sequence. Luminosity $L$ vs effective temperature $T_\text{eff}$ also yields a different but very similar graph.
 
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\textwidth]{images/HRDiagram.png}
+  \includegraphics[width=0.75\textwidth]{images/HRDiagram.png}
 \end{figure}
+
+\newpage
 
 Based on luminosity, the stars can be classified into \textbf{luminosity classes}:
 \begin{itemize}[label=]
@@ -206,8 +207,6 @@ Based on luminosity, the stars can be classified into \textbf{luminosity classes
   \item Class \RN{5} Dwarfs; Class \RN{6} Subdwarfs
 \end{itemize}
 Our sun is a luminosity class \RN{5} dwarf.
-
-\newpage
 
 Since stars exist which have, for the same spectral type and hence the same color temperature (and roughly the same effective temperature), very different luminosities, we can deduce immediately that these stars have different radii from the equation of effective temperature (\ref{eq:eff temperature}). Thus the red giants which have the same effective temperatures as the main sequence stars must have much larger radii.
 
@@ -222,21 +221,42 @@ If we have the distance of a star (thus its luminosity) and if its surface gravi
   \frac{L}{L_\text{\Sun}} \approx \left( \frac{M}{M_\text{\Sun}} \right)^{3.5} \label{eq:stellar mass}
 \end{align}
 
-\subsection{Spectra of Some Stars}
+\subsubsection{Sun}
+The solar spectrum peaks at around 501 nm, which looks green ish to me. According to Wien's law, assuming blackbody, the surface temperature of the sun is estimated to be:
+\begin{align*}
+  T_\text{eff} = \frac{b}{501 \text{ nm}} \approx 5784.431 \text{K}
+\end{align*}
 
 \begin{figure}[h]
+  \centering
+  \includesvg[inkscapelatex = false, width=0.58\textwidth]{images/Solar_spectrum_en.svg}
+\end{figure}
+
+\clearpage
+
+\subsection{Spectra of Some Stars}
+
+\begin{figure}[H]
   \centering
   \includegraphics[width=0.8\textwidth]{images/solarspectrum.png}
   \caption{\small Solar Spectrum, G2 Type Star}
 \end{figure}
-
-\bigskip
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.48\textwidth]{images/O5typestar.png} \hfill \includegraphics[width=0.48\textwidth]{images/Btypestar.png}
   \caption{\small Spectrum of an O5 Type Star (left) and B Type Stars (right).}
 \end{figure}
+
+\clearpage
+
+\begin{wrapfigure}[15]{r}{0.45\textwidth}
+  \centering
+  \includegraphics[width=0.42\textwidth]{images/star-spectra.png}
+  \caption{\small The spectra of the different spectral classes of stars.}
+\end{wrapfigure}
+
+The different spectral types have different effective temperatures. This is demonstrated in their emission spectra where the earlier stars have a smaller peak wavelength, thus appearing bluer.
 
 \subsection{Structure and Evolution of Stars}
 Stars are almost spherically symmetric, so we consider its parameters as radial functions: Pressure, Density, Temperature and Chemical Composition. Stars are almost always in hydrostatic equilibrium, with the pressure fighting against its own gravitational pull.
@@ -358,6 +378,24 @@ This is a historical convention with somewhat ambiguous definition that stuck al
 
 In general, Elliptical galaxies appear red and spiral galaxies appear blue. Drawing inference from above, elliptical galaxies must be having a lot more older stars and lesser new star formation in comparison to spirals.
 
+\vspace{1em}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.7\textwidth]{images/galaxy-spectra.png}
+  \caption{\small Spectra of different kinds of galaxies.}
+\end{figure}
+
+\vspace{1em}
+
+\begin{itemize}
+  \item \tb{Normal Galaxies}: Galaxies whose total spectral distribution can roughly be described as the superposition of the spectra of all of its stars.
+  \item \tb{Active Galaxies}: The spectral distribution of these galaxies have major contribution from gravitational sources: specifically the infall of matter into the Supermassive Black Hole (SMB) at the center of the galaxy. \textit{Active Galactic Nuclei} (AGNs) are a class of such galaxies in which the largest fraction of luminosity is produced in a very small central region: the active galactic nucleus.
+\end{itemize}
+
 % \printbibliography
+
+\chapter*{stuff to add sometime?}
+need to add Initial Mass Function stuff at some point.
 
 \end{document}
