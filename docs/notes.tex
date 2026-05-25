@@ -1,7 +1,8 @@
 \documentclass[a4paper,12pt]{report}
 \usepackage{usual}
-\usepackage{ulem}
-\usepackage{starfont}
+\usepackage{ulem} % wavy underlines ftw
+\usepackage{framed} % for boxing text
+\usepackage{starfont} % has astro symbols like \Sun
 \usepackage[backend=biber,style=phys,sorting=none]{biblatex}
 % \addbibresource{ass2ref.bib}
 
@@ -18,6 +19,10 @@
 
 \newcommand{\MS}{M_\text{\Sun}}
 \newcommand{\LS}{L_\text{\Sun}}
+
+\newcommand{\MB}{M_\text{B}}
+\newcommand{\Ieff}{I_\text{e}}
+\newcommand{\Reff}{{R_\text{e}}}
 
 % ===============================================================================================================
 
@@ -38,7 +43,9 @@
 \red{\textbf{TODO}}
 
 \begin{itemize}
-  \item add section for atomic and molecular spectral lines, H alpha, cool gas, all of that stuff.
+  \item need to add Initial Mass Function stuff at some point.
+  \item need to add info about emission lines of x rays (detecting hot gas $\sim 10^7$ K), H$\alpha$ lines (detecting warm gas $\sim 10^4$ K), H\RN{1} (21 cm) lines (detecting cold gas $\sim 100$ K).
+  \item From sec 9.6 in Schneider, need to add info about star formation detection, IMF and other stuff. Whole treasure trove is there.
 \end{itemize}
 
 \section{Basic Terminology}
@@ -48,7 +55,10 @@
 \begin{enumerate}[leftmargin=*, label=\roman*., itemsep=0.8em]
   \item \red{add parsec defn}
     
-  \item \tb{Luminosity} ($L$): The total amount of electromagnetic \textbf{energy emitted per unit time} by an astronomical object.
+  \item \tb{Luminosity} ($L$): The total amount of electromagnetic \textbf{energy emitted per unit time} by an astronomical object. The total luminosity from an isotropic source is:
+    \begin{align*}
+      L = \int \dd A \, I(R) = \int\limits_0^{2\pi} \int\limits_0^\infty \dd \theta \, \dd R \, I(R) \, R
+    \end{align*}
     
   \item \tb{Radiant Flux Density} ($S$): The total amount of electromagnetic \textbf{energy per unit area per unit time} by an astronomical object. In other words, it is the luminosity per unit area. According to this definition, at a distance $D$ from a star (say):
     \begin{align*}
@@ -57,6 +67,13 @@
     
   \item \tb{Effective Temperature} ($T_\text{eff}$): The effective temperature of a body such as a star or planet is the temperature of a black body of the same radius that would emit the same total energy as electromagnetic radiation. \label{def:effective temp}
     
+  \item \tb{Effective Radius} ($\Reff$): Defined such that half of the luminosity of a galaxy is emitted from within this radius.
+  \begin{align*}
+    \int\limits_0^\Reff \dd R \ I(R) R = \frac{1}{2} \int\limits_0^\infty \dd R \ I(R) R
+  \end{align*} \label{def:effective radius}
+  
+\item \tb{Effective Intensity} ($\Ieff$): $\Ieff = I(\Reff)$; Total intensity from within the effective radius. \label{def:effective intensity}
+    
   \item \tb{Colour Temperature} ($T_c$): The temperature of a black body such that it has the same colour index as that of an astral body. \label{def:colour temp}
     
   \item \tb{Specific Luminosity} ($L_\nu$): The energy emitted per unit time for a unit frequency range.
@@ -64,6 +81,9 @@
   \item \red{add sun units, \Sun}
 \end{enumerate} \label{def:specific luminosity}
 
+\clearpage
+
+% ===============================================================================================================
 
 \section{Blackbody Radiation}
 A very brief explanation of blackbody radiation includes the Stefan-Boltzmann Law which states that the flux $S$ for a perfect blackbody is given by:
@@ -259,6 +279,8 @@ The solar spectrum peaks at around 501 nm, which looks green ish to me. Accordin
 The different spectral types have different effective temperatures. This is demonstrated in their emission spectra where the earlier stars have a smaller peak wavelength, thus appearing bluer.
 
 \subsection{Structure and Evolution of Stars}
+\red{Add how stars are formed from cool gas through gravitational forces mainly.}
+
 Stars are almost spherically symmetric, so we consider its parameters as radial functions: Pressure, Density, Temperature and Chemical Composition. Stars are almost always in hydrostatic equilibrium, with the pressure fighting against its own gravitational pull.
 
 \subsubsection{Fusion at the Center and Transport of Energy}
@@ -419,10 +441,129 @@ From this diagram we observe that most of the galaxies in the local group are ei
 A red stellar population does not contain massive luminous stars, leading to a high mass-to-light ratio. As a consequence, a red population of the same brightness would be much more significantly massive than a blue population.
 
 \section{Elliptical Galaxies}
+A rough subclassification of elliptical galaxies based on luminosity and size is as follows:
+
+\begin{itemize}
+  \item \ti{Normal Ellipticals}: Consists of giant ellipticals (gE's), those of intermediate luminosity (E's) and compact ellipticals (cE's). $M_\text{B} \sim -23 \text{ to } -15$.
+  \item \ti{Dwarf Ellipticals} (dE's): Different from cE's because they have a significantly smaller surface brightness and a lower metallicity.
+  \item \ti{cD Galaxies}: Extremely luminous ($\MB \sim -25$) and large (up to R $\lesssim$ 1 Mpc) galaxies found only at the center of dense clusters of galaxies. With very high surface brightness near the center, they have an extended diffuse envelope. Very high $M/L$ ratio.
+  \item \ti{Blue Compact Dwaf Galaxies} (BCD's): They are very blue ($\langle B - V \rangle \text{ between 0.0 and 0.3}$) dwarf galaxies that contain an appreciable amount of gas.
+  \item \ti{Dwarf Spheroidals} (dSph's): Very low luminosity ($\MB \sim -8$) and surface brightness.
+\end{itemize}
+
+\begin{table}[h!]
+\centering
+\caption{Characteristic values for early-type galaxies}
+\begin{tabular}{lcccccc}
+\hline
+ & S0 & cD & E & dE & dSph & BCD \\
+\hline
+$M_B$ 
+& $-17$ to $-22$ 
+& $-22$ to $-25$ 
+& $-15$ to $-23$ 
+& $-13$ to $-19$ 
+& $-8$ to $-15$ 
+& $-14$ to $-17$ \\
+
+$M\ (\mathrm{M}_\odot)$ 
+& $10^{10}$--$10^{12}$ 
+& $10^{13}$--$10^{14}$ 
+& $10^{8}$--$10^{13}$ 
+& $10^{7}$--$10^{9}$ 
+& $10^{7}$--$10^{8}$ 
+& $\sim 10^{9}$ \\
+
+$D_{25}\ (\mathrm{kpc})$ 
+& $10$--$100$ 
+& $300$--$1000$ 
+& $1$--$200$ 
+& $1$--$10$ 
+& $0.1$--$0.5$ 
+& $<3$ \\
+
+$\langle M/L_B \rangle$ 
+& $\sim 10$ 
+& $>100$ 
+& $10$--$100$ 
+& $1$--$10$ 
+& $5$--$100$ 
+& $0.1$--$10$ \\
+
+$\langle S_N \rangle$ 
+& $\sim 5$ 
+& $\sim 15$ 
+& $\sim 5$ 
+& $4.8 \pm 1.0$ 
+& -- 
+& -- \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+
+\begin{minipage}{\textwidth}
+\small
+$D_{25}$ denotes the diameter at which the surface brightness has decreased to 25 B-mag/arcsec$^2$, $S_N$ is the ``specific frequency'', a measure for the number of globular clusters in relation to the visual luminosity, and $M/L$ is the mass-to-light ratio in Solar units (the values of this table are taken from the book by Carroll \& Ostlie).
+\end{minipage}
+\end{table}
+
+\subsection{Brightness Profile}
+The brightness profile of a galaxy usually follows the \ti{de Vaucouleur's profile} which says the surface brightness measured as $\mu \propto -2.5 \log(I)$ is proportional to the $r^{1/4}$ where $r$ is the projected distance from the center. More specifically, we have:
+\begin{align*}
+  \log \left( \frac{I(R)}{I_\text{e}} \right) = -3.3307 \left[ \left(\frac{R}{R_\text{e}} \right)^{1/4} - 1 \right]
+\end{align*}
+where $\Reff$ is the effective radius (\ref{def:effective radius}) and $\Ieff$ is the effective intensity (\ref{def:effective intensity}). Another form of the above equation is:
+\begin{align*}
+  I(R) = \Ieff \exp \left(-7.669 \left[ (R/\Reff)^{1/4} - 1 \right] \right)
+\end{align*}
+
+\begin{figure}[h]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{images/devauc.png}
+  \end{minipage}
+  \hspace{1ex}
+  \begin{minipage}{0.35\textwidth}
+    \caption{\small Surface brightness of galaxy NGC 4472 fitted with a de Vaucouleur's profile. It is evident that this galaxy has a core/light deficit.}
+  \end{minipage}
+\end{figure}
+
+The brightness profiles of normal E's and cD's (in its innermost parts) approximately follows a de Vaucouleur's profile. The central brightness profile of ellipticals sometimes lies well below the $r^{1/4}$ fit. Such ellipicals are said to have a \ti{core} or \ti{light deficit}. These are usually very luminous, consequently also having very high stellar masses. The opposite can also happen with an \ti{excess of light} in the central region of the galaxy, typically having lower luminosity and thus lower stellar mass.
+
+\subsection{Chemical Composition}
+Many ellipticals (up to 75\%) contain visible amounts of dust, manifested partially in the form of a dust disk; frequently extended disks of cold gas (H\RN{1}), upto $\sim$200kpc in diameter.
+
+\subsubsection{Star Formation}
+
+Star formation is low but not existent. The UV emission (that signify O and B stars primarily\footnote{Out of all the spectral classes of stars. There are other sources of UV like AGNs.}, which have a relatively short lifespan) is more extended than the optical image of the galaxies, indicating that the star formation occurs in the outer parts of the galaxy.
+
+\subsubsection{Metallicity}
+The metallicity of ellipticals and S0 galaxies increase towards the galaxy center, as derived from the colour gradients. S0 bulges also appear redder than the disk.
+
+\subsection{Dynamics of Elliptical Galaxies}
+
+\subsubsection{Cause of Ellipticity}
+If rotation of the ellipticals were the only reason for their flattening from supposed `spherical' galaxies, it can be shown through stellar dynamics that the rotational speed of the galaxy $v_\text{rot}$ and velocity dispersion\footnote{Measure of how much the stars are moving randomly in comparison to the mean velocity, just like gas molecules in random motion because of their thermal energy.}, $\sigma_v$ has to obey:
+\begin{align*}
+  \left( \frac{v_\text{rot}}{\sigma_v} \right)_\text{iso} = \sqrt{\frac{\epsilon}{1 - \epsilon}}
+\end{align*}
+where $\epsilon$ is the ellipticity. While this could have been an explanation for ellipticals of low luminosity or bulges of disks, in general, for ellipticals with very high luminosity, $v_\text{rot} << \sigma_v$, so that rotation cannot be a major cause of the ellipticity.
+
+\subsubsection{Relaxation Time-scale}
+The brightness profile of an elliptical galaxy is determined by the distribution of its stellar orbits. We know from redshift measurements that galaxies rotate. Constructing initial position and velocity distributions that result in ellipticals not being stationary and being self-gravitating equilibrium systems is a difficult mathematical problem in general.
+
+\vspace{1em}
+
+Assuming that close interactions of stars could lead to significant disruption in stellar orbits, \ti{section 3.2.4} of \ti{Schneider} \red{REFERENCE THIS LATER} explains how the relaxation time turns out to be longer than the age of the universe, considering all stars of equal masses and extents.
+
+\begin{framed}
+  We thus conclude that stars behave like a collision-less gas: they are stabilized by dynamical pressure, and they are elliptical because the stellar distribution is anisotropic in velocity space. This corresponds to an anisotropic pressure.
+\end{framed}
+
+\red{NEED TO EXPLAIN WHY LATER}
 
 % \printbibliography
-
-\chapter*{stuff to add sometime?}
-need to add Initial Mass Function stuff at some point.
 
 \end{document}
