@@ -1,5 +1,6 @@
-\documentclass[a4paper,12pt]{report}
+\documentclass[a4paper,11pt]{report}
 \usepackage{usual}
+\usepackage{caption} % caption width adjustment
 \usepackage{ulem} % wavy underlines ftw
 \usepackage{framed} % for boxing text
 \usepackage{starfont} % has astro symbols like \Sun
@@ -15,7 +16,6 @@
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\tb}[1]{\textbf{#1}}
-\newcommand{\mb}[1]{\mathbf{#1}}
 
 \newcommand{\MS}{M_\text{\Sun}}
 \newcommand{\LS}{L_\text{\Sun}}
@@ -23,6 +23,9 @@
 \newcommand{\MB}{M_\text{B}}
 \newcommand{\Ieff}{I_\text{e}}
 \newcommand{\Reff}{{R_\text{e}}}
+\newcommand{\mueff}{{\mu_\text{e}}}
+
+\newcommand{\tsim}{$\sim$}
 
 % ===============================================================================================================
 
@@ -76,10 +79,22 @@
     
   \item \tb{Colour Temperature} ($T_c$): The temperature of a black body such that it has the same colour index as that of an astral body. \label{def:colour temp}
     
-  \item \tb{Specific Luminosity} ($L_\nu$): The energy emitted per unit time for a unit frequency range.
+  \item \tb{Specific Luminosity} ($L_\nu$): The energy emitted per unit time for a unit frequency range.\label{def:specific luminosity}
+    
+  \item \tb{Rotation Curves}: Rotational velocity ($v$) of stars and gas around the galactic center as a function the galacto-centric radius\footnote{Distance from the center of the galaxy.} $R$.
+    
+  \item \tb{Globular Clusters}: A globular cluster is defined as a gravitationally bound collection of typically several hundred thousand stars contained within a spherical region with a radius of approximately 20 parsecs (pc). The members of the cluster orbit according to the gravitational potential of the cluster while the cluster as a whole orbits the center of the galaxy.\label{def:globular clusters}
     
   \item \red{add sun units, \Sun}
-\end{enumerate} \label{def:specific luminosity}
+\end{enumerate}
+
+\textbf{Spiral Galaxy Specific}
+
+\begin{enumerate}[leftmargin=*, label=\roman*., itemsep=0.8em]
+  \item \tb{Scale-length} ($h_R$): The radius at which the surface brightness of the galaxy is a factor of e less than at the center. \label{def:scale-length}
+    
+  \item \tb{Scale-height} ($h_z$): The radius at which the surface brightness of the galaxy (edge-on) is a factor of e less than at the center. \label{def:scale-height}
+\end{enumerate}
 
 \clearpage
 
@@ -130,7 +145,7 @@ The magnitudes of the different filters are related, by definition, as $U = B = 
 
 For a more precise definition, let $T_X(\nu)$ be the transmission curve of the filter-detector system. $T_X(\nu)$ specifies which fraction of the incoming photons with frequency are registered by the detector. The apparent magnitude of a source with spectral flux $S_\nu$ is then:
 \begin{align*}
-  m_X = -2.5 \log\left(\frac{\int \dd \nu \ T_X(\nu) S_\nu}{\int \dd \nu \ T_X(\nu)}\right) + \text{const.}
+  m_X = -2.5 \log\left(\frac{\int \dd \nu \, T_X(\nu) \, S_\nu}{\int \dd \nu \, T_X(\nu)}\right) + \text{const.}
 \end{align*}
 The argument of the logarithm is the average flux received in total for the entire EM spectrum. The constant is determined from reference stars. This is also referred to as the Vega apparent magnitude.
 
@@ -218,8 +233,6 @@ Both of these diagrams yield a very charcteristic central result of astronomy wh
   \includegraphics[width=0.75\textwidth]{images/HRDiagram.png}
 \end{figure}
 
-\newpage
-
 Based on luminosity, the stars can be classified into \textbf{luminosity classes}:
 \begin{itemize}[label=]
   \item Class \RN{1} Supergiants; Class \RN{2} Bright giants
@@ -251,8 +264,6 @@ The solar spectrum peaks at around 501 nm, which looks green ish to me. Accordin
   \centering
   \includesvg[inkscapelatex = false, width=0.58\textwidth]{images/Solar_spectrum_en.svg}
 \end{figure}
-
-\clearpage
 
 \subsection{Spectra of Some Stars}
 
@@ -298,7 +309,7 @@ For temperatures below around $15 \times 10^6$ K, the energy production rate is 
 \subsubsection{Lifetime of a Star}
 Beginning with homogenous chemical composition, if the stars have masses above $\sim 0.08 \MS$, only then do they have enough temperature and pressure in their core to fuse hydrogen into helium. Otherwise, they are called brown dwarfs which aren't exactly stars in the proper sense.
 
-\vspace{1em}
+\clearpage
 
 \begin{wrapfigure}[20]{r}{0.45\textwidth}
   \vspace{-2em}
@@ -327,17 +338,17 @@ Evolution post the initial phase depends on the stellar mass. Suppose the initia
 \newpage
 
 \begin{itemize}[label=$\bullet$, itemsep=1.2em] 
-  \item For $M \le 0.7 \MS$ \\[0.4em]
+  \item For $M \le 0.7 \MS$ \\[0.2em]
     The initial hydrogen burning phase\footnote{\href{https://en.wikipedia.org/wiki/Stellar_nucleosynthesis\#Hydrogen_fusion}{Hydrogen burning} just refers to its fusion into helium. Similarly, helium burning refers to its fusion into carbon.} of such stars is longer than the (estimated) age of the universe\footnote{The \href{https://en.wikipedia.org/wiki/Age_of_the_universe}{current estimate} for the age of the universe is around 13.787 billion years.}. These stars still lie on the main sequence.
     
-  \item For $M \le 2.5 \MS$ \\[0.4em]
+  \item For $M \le 2.5 \MS$ \\[0.2em]
     Central hydrogen burning is followed by a relatively brief phase of the hydrogen fusing into helium in a shell outside the center of the star. After this phase, the star moves right in the HRD (lower effective temperature but same luminosity) and thereby strongly expands (\ref{eq:eff temperature}). This causes the temperature and density in the center rise enough so that helium starts fusing into carbon.
 
     \vspace{1em}
 
     This helium burning is very explosive for these stars, resulting in `helium flashes', during which large amounts of stellar mass get ejected. After these flashes, a new stable equilibrium configuration is established with a helium burning shell formed besides the hydrogen burning shell. Expanding its radius, the star will evolve into a red giant or supergiant and move along the asymptotic giant branch (AGB) in the HRD.
     
-  \item For $M \le 8 \MS$ \\[0.4em]
+  \item For $M \le 8 \MS$ \\[0.2em]
     After the initial expansion due to the formation of the hydrogen burning shell, these stars have their cores hot and dense enough for `quiet' helium formation. Once the core runs out of helium, a second shell source forms fusing helium. In this stage, the star becomes a red giant or supergiant. A large portion of stellar mass is ejected into the interstellar medium in the form of stellar winds.
 
     \vspace{1em}
@@ -348,7 +359,7 @@ Evolution post the initial phase depends on the stellar mass. Suppose the initia
 
     At this stage, since the star is shedding its outer envelope, its radius decreases drastically, leading to a very drastic increase in temperature (\ref{eq:eff temperature}), moving it left in the HRD. \uwave{The fuel burning in the core is not affected, hence the luminosity stays mostly the same.} However, once the fuel runs out, there is a decrease in the luminosity which leads to a small decrease in the temperature until it cools down to become a \ti{white dwarf} with a mass of about $0.6 \MS$ and a radius roughly the same as that of Earth.
     
-  \item For $M \ge 8 \MS$ \\[0.4em]
+  \item For $M \ge 8 \MS$ \\[0.2em]
     For these stars, the temperature and density at its center become so tremendous that carbon can also be fused.Subsequent stellar evolution leads to a core-collapse supernova, leading to the formation of a neutron star, or for the most massive ones ($\sim M \ge 25 \MS$), a black hole.
     
 \end{itemize}
@@ -377,7 +388,7 @@ On the basis of shape or morphology, galaxies have been historically classified 
 \begin{enumerate}
   \item \textbf{Elliptical Galaxies}: Their isophotes\footnote{Isophotes are contours along which the surface brightness is constant.} resemble ellipses. They are further subclassified according to the \textbf{ellipticity} of the isophotes: $\epsilon = 1 - b/a$, where a, b are the semi-major and semi-minor axes. Then we define $N = 10 \epsilon$ which gives us the representation EN for elliptical galaxies. An E7 galaxy is an elliptical galaxy with $b/a = 0.3$.
     
-  \item \textbf{Spiral Galaxies}: Their isophotes look like spirals. They are subdivided into two classes: \ti{normal spirals} (S's) and \ti{barred spirals} (SB's). These subclasses are further classified on the basis of the (decreasing) ratio of bulge to disc luminosity denoted by a, ab, b, bc, c, cd, d. There are also supposed correlations of bulge size (decreasing along the sequence) and spiral arm tightness (increasing along the sequence) which will be discussed further later.
+  \item \textbf{Spiral Galaxies}: Their isophotes look like spirals. They are subdivided into two classes: \ti{normal spirals} (S's) and \ti{barred spirals} (SB's). These subclasses are further classified on the basis of the (decreasing) ratio of bulge to disc luminosity denoted by a, ab, b, bc, c, cd, d. There are also supposed correlations of bulge size (decreasing along the sequence) and spiral arm tightness (increasing along the sequence). The sequence goes from \textit{early type} (Sa, SBab) to \textit{late type spirals} (SBc, Sd). This is a purely historical convention.
     
   \item \textbf{Irregular Galaxies} (Irr's): Galaxies with weak (Irr \RN{1}) or no (Irr \RN{2}) regular structure. This adds further subclasses to the Hubble sequence: Sdm, Sm, Im, Ir (m stands for Magellanic\footnote{Magellanic Clouds are two irregular dwarf galaxies orbiting the Milky Way. The term \ti{Magellanic Clouds} was reported by the portuguese explorer Ferdinand Magellan's crew during their expedition.}, Ir is just irregular).
     
@@ -385,16 +396,20 @@ On the basis of shape or morphology, galaxies have been historically classified 
 \end{enumerate}
 
 \subsubsection{Early/Late Type Nomenclature}
-This is a historical convention with somewhat ambiguous definition that stuck along. It has nothing to do with evolutionary stages of the galaxies.
+This is another purely historical convention with somewhat ambiguous definition that stuck along. It has nothing to do with evolutionary stages of the galaxies.
 
 \vspace{1em}
 
 \begin{itemize}
-  \item \textbf{Ellipticals} and \textbf{S0 galaxies} are referred to as \ti{early type galaxies}. They might include Sc or SBc spirals.
+  \item \textbf{Ellipticals} and \textbf{S0 galaxies} are referred to as \ti{early type galaxies}.
   \item \textbf{Spiral galaxies} (the remaining) are referred to as \ti{late type galaxies}.
 \end{itemize}
 
 \newpage
+
+\begin{framed}
+  Note that early-late type galaxies are distinct from early-late type spirals.
+\end{framed}
 
 \subsection{Spectral Distribution of Galaxies}
 
@@ -430,6 +445,7 @@ Plotting the contour plot of the brighness of galaxies for different colours and
 
 \begin{figure}[h]
   \centering
+  \captionsetup{width=0.8\textwidth}
   \includegraphics[width=0.8\textwidth]{images/binodal-colour.png}
   \caption{\small CMD showing two peaks of brightness, one at the redder and cooler portion and another at the bluer and hotter portion.}
 \end{figure}
@@ -445,7 +461,7 @@ A rough subclassification of elliptical galaxies based on luminosity and size is
 
 \begin{itemize}
   \item \ti{Normal Ellipticals}: Consists of giant ellipticals (gE's), those of intermediate luminosity (E's) and compact ellipticals (cE's). $M_\text{B} \sim -23 \text{ to } -15$.
-  \item \ti{Dwarf Ellipticals} (dE's): Different from cE's because they have a significantly smaller surface brightness and a lower metallicity.
+  \item \ti{Dwarf Ellipticals} (dE's): Different from cE's because they have a significantly lower surface brightness and a lower metallicity.
   \item \ti{cD Galaxies}: Extremely luminous ($\MB \sim -25$) and large (up to R $\lesssim$ 1 Mpc) galaxies found only at the center of dense clusters of galaxies. With very high surface brightness near the center, they have an extended diffuse envelope. Very high $M/L$ ratio.
   \item \ti{Blue Compact Dwaf Galaxies} (BCD's): They are very blue ($\langle B - V \rangle \text{ between 0.0 and 0.3}$) dwarf galaxies that contain an appreciable amount of gas.
   \item \ti{Dwarf Spheroidals} (dSph's): Very low luminosity ($\MB \sim -8$) and surface brightness.
@@ -504,7 +520,7 @@ $\langle S_N \rangle$
 
 \begin{minipage}{\textwidth}
 \small
-$D_{25}$ denotes the diameter at which the surface brightness has decreased to 25 B-mag/arcsec$^2$, $S_N$ is the ``specific frequency'', a measure for the number of globular clusters in relation to the visual luminosity, and $M/L$ is the mass-to-light ratio in Solar units (the values of this table are taken from the book by Carroll \& Ostlie).
+  $D_{25}$ denotes the diameter at which the surface brightness has decreased to 25 B-mag/arcsec$^2$, $S_N$ is the ``specific frequency'', a measure for the number of globular clusters (\ref{def:globular clusters}) in relation to the visual luminosity, and $M/L$ is the mass-to-light ratio in Solar units (the values of this table are taken from the book by Carroll \& Ostlie).
 \end{minipage}
 \end{table}
 
@@ -526,23 +542,31 @@ where $\Reff$ is the effective radius (\ref{def:effective radius}) and $\Ieff$ i
   \end{minipage}
   \hspace{1ex}
   \begin{minipage}{0.35\textwidth}
-    \caption{\small Surface brightness of galaxy NGC 4472 fitted with a de Vaucouleur's profile. It is evident that this galaxy has a core/light deficit.}
+    \caption{\small Surface brightness of galaxy NGC 4472 fitted with a de Vaucouleur's profile. It is evident that this galaxy has a light deficit; a core.}
   \end{minipage}
 \end{figure}
 
 The brightness profiles of normal E's and cD's (in its innermost parts) approximately follows a de Vaucouleur's profile. The central brightness profile of ellipticals sometimes lies well below the $r^{1/4}$ fit. Such ellipicals are said to have a \ti{core} or \ti{light deficit}. These are usually very luminous, consequently also having very high stellar masses. The opposite can also happen with an \ti{excess of light} in the central region of the galaxy, typically having lower luminosity and thus lower stellar mass.
+
+\begin{figure}[h]
+  \centering
+  \captionsetup{width=0.8\textwidth}
+  \includegraphics[width=0.8\textwidth]{images/eff rad vs abs mag.png}
+  \caption{\small \ti{Left}: effective radius $\Reff$ vs absolute magnitude $\MB$. \ti{Right}: avg surface brightness $\mu_\text{avg}$ vs absolute magnitude $\MB$.} \label{fig:eff radius and avg brightness vs absolute magnitude}
+\end{figure}
 
 \subsection{Chemical Composition}
 Many ellipticals (up to 75\%) contain visible amounts of dust, manifested partially in the form of a dust disk; frequently extended disks of cold gas (H\RN{1}), upto $\sim$200kpc in diameter.
 
 \subsubsection{Star Formation}
 
-Star formation is low but not existent. The UV emission (that signify O and B stars primarily\footnote{Out of all the spectral classes of stars. There are other sources of UV like AGNs.}, which have a relatively short lifespan) is more extended than the optical image of the galaxies, indicating that the star formation occurs in the outer parts of the galaxy.
+Star formation is low but not existent. Around 15\% of red galaxies showed a strong UV excess according to UV-observations from GALEX. Around 75\% of them show clear signs of star formation. The UV emission (that signifies O and B stars primarily\footnote{Out of all the spectral classes of stars. There are other sources of UV like AGNs.}, which have a relatively short lifespan) is more extended than the optical image of the galaxies, indicating that the star formation occurs in the outer parts of the galaxy.
 
 \subsubsection{Metallicity}
 The metallicity of ellipticals and S0 galaxies increase towards the galaxy center, as derived from the colour gradients. S0 bulges also appear redder than the disk.
 
 \subsection{Dynamics of Elliptical Galaxies}
+We can tell from doppler measurements if a galaxy is rotating (unless it's directly face-on). We consequently try to understand how they are stable in time or in such shape and motion to begin.
 
 \subsubsection{Cause of Ellipticity}
 If rotation of the ellipticals were the only reason for their flattening from supposed `spherical' galaxies, it can be shown through stellar dynamics that the rotational speed of the galaxy $v_\text{rot}$ and velocity dispersion\footnote{Measure of how much the stars are moving randomly in comparison to the mean velocity, just like gas molecules in random motion because of their thermal energy.}, $\sigma_v$ has to obey:
@@ -556,13 +580,91 @@ The brightness profile of an elliptical galaxy is determined by the distribution
 
 \vspace{1em}
 
-Assuming that close interactions of stars could lead to significant disruption in stellar orbits, \ti{section 3.2.4} of \ti{Schneider} \red{REFERENCE THIS LATER} explains how the relaxation time turns out to be longer than the age of the universe, considering all stars of equal masses and extents.
+Assuming that close interactions of stars could lead to significant disruption in stellar orbits, \ti{section 3.2.4} of \ti{Schneider} \red{ADD REFERENCE} explains how the relaxation time turns out to be longer than the age of the universe, considering all stars of equal masses and extents.
 
 \begin{framed}
   We thus conclude that stars behave like a collision-less gas: they are stabilized by dynamical pressure, and they are elliptical because the stellar distribution is anisotropic in velocity space. This corresponds to an anisotropic pressure.
 \end{framed}
 
 \red{NEED TO EXPLAIN WHY LATER}
+
+\section{Spiral Galaxies}
+Some trends are observed in the sequence of spiral galaxies, useful for early-late spiral classification:
+
+\begin{itemize}
+  \item decreasing luminosity ratio of with $L_\text{bulge}/L_\text{disc} \sim 0.5$ for Sa's and $\sim 0.03$ for Sc's,
+  \item increasing opening angle for the spiral arms, from \tsim\ 6\textdegree\ for Sa's to \tsim\ 18\textdegree for Sc's,
+  \item and increasing structure of the isophotes: Sa's have a `smooth' distribution of stars along their spiral arms whereas Sc's have bright knots and H\RN{2} regions.
+\end{itemize}
+
+\vspace{1em}
+
+Spirals also have lesser variation in their parameters of absolute magnitude and stellar mass in comparison to eliipticals. They range from $-16 \gtrsim M_\text{B} \gtrsim -23$ mag in terms of luminosity and $10^9 \MS \lesssim M \lesssim 10^{12} \MS$ in terms of stellar mass. Around 70\% of all disk galaxies contain a large-scale stellar bar.
+
+\vspace{1em}
+
+The morphology of spirals can be expanded according to the value of scale-height across the different stellar populations: \label{def:disk thickness classification}
+\begin{itemize}
+  \item \tb{Young Thin Disk}: This component contains the largest fraction of gas and dust. Star formation is active and thee youngest stars can be found on this thin disk. Scale-height is the smallest.
+  \item \tb{Old Thin Disk}: This component is thicker and contains older stars.
+  \item \tb{Thick Disk}: This component is significantly thicker and consists of older, metal-poor stars with a higher velocity dispersion perpendicular to the disk plane. Scale-height is the largest.
+\end{itemize}
+Note that the scale-height corresponds to the age of the stellar population.
+
+\subsection{Brightness Profile}
+The brightness profile of the bulge follows the de Vaucouleur's profile to a first approximation. The disk (face-on) follows an exponential profile. Expressing these distributions of the surface brightness $\mu \propto -2.5 \log(I)$, we have:
+\begin{align}
+  \mu_\text{bulge}(R) &= \mueff + 8.3268 \left[ \left( \frac{R}{\Reff} \right)^{1/4} - 1 \right] \label{eq:bulge brightness}
+\end{align}
+and
+\begin{align}
+  \mu_\text{disk}(R) &= \mu_0 + 1.09 \left( \frac{R}{h_R} \right) \label{eq:disk brightness}
+\end{align}
+where $\mueff$ is the surface brightness at $\Reff$, $h_R$ is the scale-length (\ref{def:scale-length}) and $\mu_0$ is the central surface brightness of the disk component, which is measured by fitting the sum of the above equations to the total light profile of the galaxy.
+
+\vspace{1em}
+
+The brightness profile of the edge of the spirals is exponential. The scale-height $h_z$ (\ref{def:scale-height}) is almost independent from the galacto-centric radius\footnote{Distance of an object from the center of the galaxy.} $R$ and scales roughly with the rotational velocity of the disk $v_\text{rot}$.
+\begin{align}
+  \mu_\text{edge}(z) = \mu_0 + 1.09\left( \frac{\abs{z}}{h_z} \right) \label{eq:edge brightness}
+\end{align}
+The typical value of the ratio of scale-height to scale-length is $h_R / h_z \sim 0.07$.
+
+\subsubsection{Bulges and Pseudobulges}
+\ti{Classical bulges} follow the de Vaucouleur's profile. However, there exist bulges which don't follow the de Vaucouleur's profile and instead follow a more exponential profile and are flatter. These bulges are called \ti{pseudobulges}. Classical bulges lie on the same sequence as ellipticals on the effective radius vs absolute magnitude graph (Fig.~\ref{fig:eff radius and avg brightness vs absolute magnitude}), however the pseudobulges have lower luminosity for the same effective radius. Classical bulges ccontain about 10 times more stars than pseudobulges.
+
+\vspace{1em}
+
+Some late type spirals have no bulge at the center but instead a nuclear stellar cluster, whose luminosity is dominated by a relatively young stellar population but whose stellar mass is dominated by an old population.
+
+\subsubsection{Freeman's Law}
+Freeman's law says that for `normal spirals', the variation of central surface brightness $\mu_0$ is very less across different galaxies. For Sa to Sc's\footnote{B-mag refers to the magnitude measured in Johnson blue band.}, $\mu_0 = 21.52 \pm 0.39$ B-mag/arcsec$^2$ and for Sd and later types, $\mu_0 = 22.61 \pm 0.47$ B-mag/arcsec$^2$.
+
+\vspace{1em}
+
+This however does not apply to \ti{low surface brightness galaxies (LSBs)}. These galaxies have $\mu_0$ 2 or more orders lesser in magnitude, making them very hard to detect at larger distances. They have much slower star formation rates.
+
+\subsubsection{Warps in Disks}
+
+\begin{wrapfigure}[13]{r}{0.4\textwidth}
+  \centering
+  \vspace{-2em}
+  \includegraphics[width=0.38\textwidth]{images/disk warp.png}
+  \caption{\small Edge-on spiral NGC4013, optical emission in grey, superimposed by intensity of cold 21-cm emitting gas (H\RN{1}). The warping begins only about when the visible disk ends.}
+\end{wrapfigure}
+
+The disk warps out of the plane of the galactic disk where most stars and gas rotate. In most cases, the warps start at radii beyond the optical radius of the galaxy, hence only visible in the distribution and motion of gas (primarily neutral hydrogen atom gas H\RN{1}).
+
+\subsubsection{Stellar Halo}
+Stellar halos of distant galaxies is hard to study due to their low surface brightness. In our neighbouring galaxy M31, the Andromeda galaxy, a stellar halo of red giant branch (RGB) stars was detected which extends out to more than 150 kpc. For radii $r \lesssim 20$ kpc, it follows the extrapolation from the bulge surface brightness, but for larger radii, it follows a radial density profile of roughly $\rho \sim r^{-3}$.
+
+\subsubsection{Thick Disk}
+This component (\ref{def:disk thickness classification}) can only be studied for edge-on spirals. The scale height of a stellar population increases with its age. For luminous disk galaxies, the thick disk does not have any substantial contribution to the luminosity. However, for lower-mass disk galaxies with rotational velocities $\lesssim 120$ km/s, the thick disk stars contribute nearly half of their luminosity and may dominate the stellar mass. This results in the dominant stellar population of these galaxies being old despite it appearing blue.
+
+\subsubsection{Sizes of Disks}
+Typically, the optical radius of a spiral galaxy extends out to about $4h_R$ (break radius), after which the surface brightness, and thus the stellar surface density, displays a break. The characteristic surface brightness at which this occurs is $\mu_\text{B} \approx 25.5$ mag/arcsec$^2$. Although there are many exceptions to this behavior, it still prevails in the majority of spirals. In contrast to the stellar distribution, neutral gas is observed to considerably larger radius, typically upto twice the break radius.
+
+\subsection{Chemical Composition}
 
 % \printbibliography
 
