@@ -24,6 +24,7 @@
 \newcommand{\Ieff}{I_\text{e}}
 \newcommand{\Reff}{{R_\text{e}}}
 \newcommand{\mueff}{{\mu_\text{e}}}
+\newcommand{\tx}[1]{\text{#1}}
 
 \newcommand{\tsim}{$\sim$}
 
@@ -49,6 +50,7 @@
   \item need to add Initial Mass Function stuff at some point.
   \item need to add info about emission lines of x rays (detecting hot gas $\sim 10^7$ K), H$\alpha$ lines (detecting warm gas $\sim 10^4$ K), H\RN{1} (21 cm) lines (detecting cold gas $\sim 100$ K).
   \item From sec 9.6 in Schneider, need to add info about star formation detection, IMF and other stuff. Whole treasure trove is there.
+  \item X-factor conversion for estimation of H$_2$ abundance given we know CO abundance.
 \end{itemize}
 
 \section{Basic Terminology}
@@ -262,16 +264,11 @@ The solar spectrum peaks at around 501 nm, which looks green ish to me. Accordin
 
 \begin{figure}[h]
   \centering
-  \includesvg[inkscapelatex = false, width=0.58\textwidth]{images/Solar_spectrum_en.svg}
+  \includesvg[inkscapelatex = false, width=0.48\textwidth]{images/Solar_spectrum_en.svg} \hfill \includegraphics[width=0.48\textwidth]{images/solarspectrum.png}
+  \caption{\small Solar Spectrum, G2 Type Star}
 \end{figure}
 
 \subsection{Spectra of Some Stars}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\textwidth]{images/solarspectrum.png}
-  \caption{\small Solar Spectrum, G2 Type Star}
-\end{figure}
 
 \begin{figure}[H]
   \centering
@@ -334,8 +331,6 @@ Thus, heavier the star, lesser the time it spends on the main sequence. A G star
 
 \subsubsection{Evolution Post Main Sequence}
 Evolution post the initial phase depends on the stellar mass. Suppose the initial mass of the star is $M$.
-
-\newpage
 
 \begin{itemize}[label=$\bullet$, itemsep=1.2em] 
   \item For $M \le 0.7 \MS$ \\[0.2em]
@@ -611,6 +606,114 @@ The morphology of spirals can be expanded according to the value of scale-height
 \end{itemize}
 Note that the scale-height corresponds to the age of the stellar population.
 
+% ===============================================================================================================
+
+\begin{table}[h!]
+\centering
+\caption{Characteristic values for spiral galaxies}
+\begin{tabular}{lccccc}
+\hline
+ & Sa & Sb & Sc & Sd/Sm & Im/Ir \\
+\hline
+
+$M_B$
+& $-17$ to $-23$
+& $-17$ to $-23$
+& $-16$ to $-22$
+& $-15$ to $-20$
+& $-13$ to $-18$ \\
+
+$M\ (\mathrm{M}_\odot)$
+& $10^{9}$--$10^{12}$
+& $10^{9}$--$10^{12}$
+& $10^{9}$--$10^{12}$
+& $10^{8}$--$10^{10}$
+& $10^{8}$--$10^{10}$ \\
+
+$\langle L_{\mathrm{bulge}}/L_{\mathrm{tot}} \rangle_B$
+& $0.3$
+& $0.13$
+& $0.05$
+& --
+& -- \\
+
+Diam.\ $(D_{25}, \mathrm{kpc})$
+& $5$--$100$
+& $5$--$100$
+& $5$--$100$
+& $0.5$--$50$
+& $0.5$--$50$ \\
+
+$\langle M/L_B \rangle\ (\mathrm{M}_\odot/L_\odot)$
+& $6.2 \pm 0.6$
+& $4.5 \pm 0.4$
+& $2.6 \pm 0.2$
+& $\sim 1$
+& $\sim 1$ \\
+
+$V_{\max}\ \mathrm{range}\ (\mathrm{km\ s^{-1}})$
+& $163$--$367$
+& $144$--$330$
+& $99$--$304$
+& --
+& $50$--$70$ \\
+
+Opening angle
+& $\sim 6^\circ$
+& $\sim 12^\circ$
+& $\sim 18^\circ$
+& --
+& -- \\
+
+$\mu_{0,B}\ (\mathrm{mag\ arcsec^{-2}})$
+& $21.52 \pm 0.39$
+& $21.52 \pm 0.39$
+& $21.52 \pm 0.39$
+& $22.61 \pm 0.47$
+& $22.61 \pm 0.47$ \\
+
+$\langle B - V \rangle$
+& $0.75$
+& $0.64$
+& $0.52$
+& $0.47$
+& $0.37$ \\
+
+$\langle M_{\mathrm{gas}}/M_{\mathrm{tot}} \rangle$
+& $0.04$
+& $0.08$
+& $0.16$
+& $0.25\ (\mathrm{Scd})$
+& -- \\
+
+$\langle M_{H_2}/M_{HI} \rangle$
+& $2.2 \pm 0.6\ (\mathrm{Sab})$
+& $1.8 \pm 0.3$
+& $0.73 \pm 0.13$
+& $0.19 \pm 0.10$
+& -- \\
+
+$\langle S_N \rangle$
+& $1.2 \pm 0.2$
+& $1.2 \pm 0.2$
+& $0.5 \pm 0.2$
+& $0.5 \pm 0.2$
+& -- \\
+
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+
+\begin{minipage}{0.95\textwidth}
+\small
+$V_{\max}$ is the maximum rotation velocity, thus characterizing the flat part of the rotation curve. The opening angle is the angle under which the spiral arms branch off, i.e., the angle between the tangent to the spiral arms and the circle around the center of the galaxy running through this tangential point. $S_N$ is the specific abundance of globular clusters as defined in (3.18).
+\end{minipage}
+
+\end{table}
+
+% ===============================================================================================================
+
 \subsection{Brightness Profile}
 The brightness profile of the bulge follows the de Vaucouleur's profile to a first approximation. The disk (face-on) follows an exponential profile. Expressing these distributions of the surface brightness $\mu \propto -2.5 \log(I)$, we have:
 \begin{align}
@@ -665,6 +768,27 @@ This component (\ref{def:disk thickness classification}) can only be studied for
 Typically, the optical radius of a spiral galaxy extends out to about $4h_R$ (break radius), after which the surface brightness, and thus the stellar surface density, displays a break. The characteristic surface brightness at which this occurs is $\mu_\text{B} \approx 25.5$ mag/arcsec$^2$. Although there are many exceptions to this behavior, it still prevails in the majority of spirals. In contrast to the stellar distribution, neutral gas is observed to considerably larger radius, typically upto twice the break radius.
 
 \subsection{Chemical Composition}
+
+\subsubsection{Star Formation}
+Stars form from gas only where its surface mass density, $\Sigma_\text{gas}$ (measured in $\MS \, \tx{pc}^{-2}$), exceeds a certain value. Marteen Schmidt in 1959 proposed its relation to the star formation rate per unit area, $\Sigma_\tx{SFR}$ (measured in $\MS \, \tx{yr}^{-1} \tx{kpc}^{-2}$) as:
+\begin{align*}
+  \Sigma_\tx{SFR} \propto \Sigma_\tx{gas}^N
+\end{align*}
+with power law index of $N \approx 1.4$. Detailed later by Rob Kennicutt, the new Schmidt-Kennicutt law now stands at:
+\begin{align*}
+  \frac{\Sigma_\tx{SFR}}{\MS \, \tx{yr}^{-1} \tx{kpc}^{-2}} = (2.5 \pm 0.7) \times 10^{-4} \left( \frac{\Sigma_\tx{gas}}{\MS \, \tx{pc}^{-2}} \right)^{1.40 \pm 0.15}
+\end{align*}
+Because of the apparent absence of star formation in the outer parts of spiral galaxies, this relation is complemented with a cutoff $\Sigma_\tx{gas}$.
+
+\clearpage
+
+\begin{wrapfigure}[12]{r}{0.6\textwidth}
+  \centering
+  \includegraphics[width=0.58\textwidth]{images/star-formation rate.png}
+  \caption{\small The diagonal lines show how long it will take to deplete available gas reservoir, corresponding to time scales of $10^8, 10^9 \tx{ and} 10^10$ from top to bottom. }
+\end{wrapfigure}
+
+This graph shows data of star formation rates against availability of hydrogen for normal spirals, LSBs and starburst galaxies. Globally, the graph can be fitted by a power law of $N=1.4$. However, for LSBs and normal 
 
 % \printbibliography
 
