@@ -87,6 +87,8 @@
     
   \item \tb{Globular Clusters}: A globular cluster is defined as a gravitationally bound collection of typically several hundred thousand stars contained within a spherical region with a radius of approximately 20 parsecs (pc). The members of the cluster orbit according to the gravitational potential of the cluster while the cluster as a whole orbits the center of the galaxy.\label{def:globular clusters}
     
+  \item \tb{Variability Time Scale}: Characteristic duration during which the radiative flux from an astral body changes significantly. This is very useful for estimating physical sizes. For instance, sometimes the flux from AGNs can change even by 50\% on a single day, indicating that the emitting region is small.
+    
   \item \red{add sun units, \Sun}
 \end{enumerate}
 
@@ -409,6 +411,10 @@ This is another purely historical convention with somewhat ambiguous definition 
 \subsection{Spectral Distribution of Galaxies}
 
 In general, Elliptical galaxies appear red and spiral galaxies appear blue. Drawing inference from above, elliptical galaxies must be having a lot more older stars and lesser new star formation in comparison to spirals.
+
+\subsection{Limitations of Morphological Classification}
+
+\red{NEED TO FILL, ADD MT ABU ANGULAR LIMITS HERE AS WELL. 2.5, 1.2, 50CM, 43CM}
 
 \vspace{1em}
 
@@ -813,6 +819,24 @@ Metallicity increases inwards towards the bulge; metal-rich stars are redder tha
 
 Spirals have a clear colour gradient: they are red in the center and bluer in the outer regions. This could be eplained by metallicity increasing inwards. Additionally, lower gas fraction in the bulge leads to less star formation and thus, in general, older redder stars than the outer regions.
 
+\subsubsection{Globular Clusters}
+Early type and more luminous galaxies usually have more globular clusters (\ref{def:globular clusters}). A way to measure the \ti{specific abundance} of globular clusters can be by normalising the total number of observed globular clusters $N_t$ to a galaxy with absolute magnitude $M_V = -15$ corresponding to a luminosity of $L_V  = L_{15}$. We thus get the following form for specific abundance:
+\begin{align*}
+  S_N = N_t \, \frac{L_{15}}{L_V} = N_t \, 10^{0.4(M_V + 15)}
+\end{align*}
+$S_N$ is larger for ellipticals than spirals, with cD galaxies having the largest values. $S_N \sim 1.2$ for Sa's and Sb's and $\sim 0.5$ for Sc's.
+
+\subsubsection{Spiral Structure}
+Spiral structure appears much bluer than the rest of the galaxy due to stars being actively formed here. It is possible that they were formed by perturbation of the gravitational potential by the bar of the galaxy or companion galaxies. They are suspected to be density waves. According to that, the rotational velocity is not the same as the velocity of the stars.
+
+\vspace{1em}
+
+Using 21 cm observations of spiral galaxies, in 1977 R. Brent Tully and J. Richard Fisher found that the maximum rotation velocity, $v_\text{max}$ of spirals is closely related to their luminosity, following the relation:
+\begin{align*}
+  L \propto v_\tx{max}^\alpha
+\end{align*}
+where $\alpha \sim 4$.
+
 \section{Atlas of Galaxy Spectra}
 The following has been taken from \href{https://ui.adsabs.harvard.edu/abs/1992ApJS...79..255K/abstract}{\ti{A Spectrophotometric Atlas of Galaxies}} by \ti{Kennicutt, 1992}.
 
@@ -844,6 +868,12 @@ The spectral flux $F(\lambda)$ of the following spectra has been normalised acco
   \centering
   \includegraphics[width=0.9\textwidth]{images/spectra-starburst.png}
 \end{figure}
+
+% ===============================================================================================================
+
+\chapter{Active Galactic Nuclei}
+
+
 
 % \printbibliography
 
