@@ -51,6 +51,8 @@
   \item need to add info about emission lines of x rays (detecting hot gas $\sim 10^7$ K), H$\alpha$ lines (detecting warm gas $\sim 10^4$ K), H\RN{1} (21 cm) lines (detecting cold gas $\sim 100$ K).
   \item From sec 9.6 in Schneider, need to add info about star formation detection, IMF and other stuff. Whole treasure trove is there.
   \item X-factor conversion for estimation of H$_2$ abundance given we know CO abundance.
+  \item permitted and forbidden transitions, this kinda adds to the absorption lines part.
+  \item how exactly doppler effect and redshift works.
 \end{itemize}
 
 Books used:
@@ -886,20 +888,63 @@ The spectral flux $F(\lambda)$ of the following spectra has been normalised acco
 
 As we had discussed earlier, a galaxy with an compact nucleus that has very high luminosity across a much larger range of wavelengths is called an \textit{active galaxy}. The nucleus is then called the \textit{Active Galactic Nucleus} (AGN). It is still unclear whether being active is a phase of galaxies or whether they're a distinct class of galaxies by themselves, showing less correlation with the morphology.
 
-\subsubsection{Common Characteristics}
+\subsection{Common Characteristics}
 \begin{itemize}
   \item Compact nuclei $R \lesssim 1 \ \tx{pc}$ producing high luminosity
   \item Much broader \textit{Spectral Emission Distribution} (SED) (\ref{def:SED}) in comparison to normal galaxies.
   \item Stronger and broader emission (and absorption) lines in comparison to other galaxies.
   \item Peak emission in X-ray or ultraviolent regions usually. This is referred to as the `big blue bump'.
-  \item They often have extended lobes of radiation connected to the nucleus by jets.
+  \item They often have extended lobes connected to the nucleus by jets.
 \end{itemize}
 
-\begin{wrapfigure}[10]{r}{0.4\textwidth}
+\vspace{1em}
+
+\begin{wrapfigure}[12]{r}{0.4\textwidth}
+  \vspace{-2em}
   \centering
   \includegraphics[width=0.38\textwidth]{images/active sed 3c.png}
-  \caption{SED of an active galaxy (quasar) 3C 273. We can observe the big blue bump in the x-ray and uv regions. Source: Ref.~\ref{book:jones}}
+  \caption{\small SED of an active galaxy (quasar) 3C 273. We can observe the big blue bump in the X-ray and UV regions. Source: Ref.~\ref{book:jones}} \label{fig:SED 3C}
 \end{wrapfigure}
+
+Active galaxies are classified into quasars, Seyfert galaxies, blazars and radio galaxies. The morphology of AGNs usually includes a compact central source and other extended sources, usually nearly symmetric double sources in the form of radio lobes. These lobes are often connected to the central core by jets, which are emission structures of some sort.
+
+\vspace{1em}
+
+Over a broad range of wavelengths, AGNs follow a power law:
+\begin{align}
+  S_\nu \propto \nu^{-\alpha} \label{eq:AGN flux power law}
+\end{align}
+where $\alpha$ is the spectral index.
+
+\vspace{1em}
+
+\ti{Note: The gap in the SED in Fig.~\ref{fig:SED 3C} around where the peak should be is caused due to interstellar absorption in our own galaxy. The so-called EUV Dark Zone is due to absorption by galactic neutral hydrogen H\RN{1} in the Milky Way.} \red{NOT SURE ABOUT THIS.}
+
+\subsection{Classification of Extended Radio Sources}
+
+\ti{Fanaroff-Riley Type \RN{1}} (FR\RN{1}) are brightest closest to the core and surface brightness decreases outwards, while for FR\RN{2}, the surface brightness is higher further from the core, and they have higher luminosities in general.
+
+\begin{figure}[h]
+  \centering
+  \captionsetup{width=0.45\textwidth}
+  \includegraphics[width=0.45\textwidth]{images/fn1 and fn2.png}
+  \caption{\small Radio galaxies M84 with FN\RN{1} (top) and 3C175 with FN\RN{2} (bottom) extended radio sources. Source: Ref~\ref{book:schneider}}
+\end{figure}
+
+As can be seen in the FN\RN{2} example, most often, only one of the jets is visible, with the other being very weak or non-existent.
+
+\subsection{Source of Energy Spectrum}
+
+For eq.~\ref{eq:AGN flux power law}, over a broad range of wavelengths, $\alpha \sim 0.7$ (\ref{eq:AGN flux power law}) for extended components and $\alpha \sim 0$ for the compact core. Radio emission is often linearly polarised (degree of polarisation upto $\sim 30\%$ or more). This suggests that the radiation is caused by \href{https://en.wikipedia.org/wiki/Synchrotron_radiation}{synchotron radiation}, where relativistic (at speeds $\ge 0.1c$) electrons are subject to magnetic fields. If this is to be the primary source of the energy spectrum, to produce wavelengths in the cm range, the electrons need to be highly relativistic, necessitating extremely efficient processes of particle acceleration.
+
+\vspace{1em}
+
+The characteristic time $t_\tx{cool}$ in which a relativistic electron loses its energy is comparable to the age of the sources for low-frequency radio emissions. However, for high-frequency emissions, like those in the optical range, the lifetimes are considerably smaller than the age of the sources and the distance spanned by the complete structure including all the extended sources. This means that the particle acceleration has to happen locally in the extended sources as well, since they don't live long enough to travel from the core.
+
+\section{Quasars}
+Point-like objects similar to stars but having spectra quite unlike stars, these \ti{quasi-stellar radio sources} (QSRs) or \ti{quasi-stellar objects} (QSOs) are the most luminous AGNs. They were discovered by identifying radio sources with point-like optical sources. They have wide broadband emissions with variability time-scale differing for different objects and wavelengths.
+
+% ===============================================================================================================
 
 % \printbibliography
 
