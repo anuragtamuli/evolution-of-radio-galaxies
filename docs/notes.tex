@@ -114,6 +114,23 @@ Books used:
 
 % ===============================================================================================================
 
+\section{Relevant Title Required}
+
+\subsection{Strength and Width of Emission Lines}
+To characterize the strength of an emission line, we define the \textit{equivalent width} of a line $W_\lambda$ as:
+\begin{align*}
+  W_\lambda = \int \dd \lambda \frac{S(\lambda) - S_c(\lambda)}{S_c(\lambda)} \approx \frac{F_\tx{line}}{S_c(\lambda_0)}
+\end{align*}
+where $S(\lambda)$ is the total spectral flux, and $S_c(\lambda)$ is the spectral flux of the continuum radiation interpolated across the wavelength range of the line. $F_\tx{line}$ is the total flux in the line and $\lambda_0$ its wavelength. Hence, $W_\lambda$ is the width of the wavelength interval over which the continuum needs to be integrated to obtain the same flux as measured in the line. Therefore, the equivalent width is a measure of the strength of a line relative to the continuum intensity.
+
+\vspace{1em}
+
+The \textit{width} of a line is characterized as follows: after subtracting the continuum, interpolated across the wavelength range of the line, the width is measured at half of the maximum line intensity. This width $\Delta \lambda$ is called the FWHM (full width at half maximum); it may be specified either in $\AA$, or in km/s if the line width is interpreted as Doppler broadening, with $\Delta \lambda / \lambda = \Delta v/ c$. It should be noted that the width $\Delta \lambda$ and the equivalent width $W_\lambda$ are very different quantities. For example, a strong narrow line can have a large $W_\lambda$, but a small $\Delta \lambda$. Conversely, a weak broad emission line can have $\Delta \lambda >> W_\lambda$.
+
+\red{NEED TO PROPERLY UNDERSTAND THIS LATER}
+
+% ===============================================================================================================
+
 \section{Blackbody Radiation}
 A very brief explanation of blackbody radiation includes the Stefan-Boltzmann Law which states that the flux $S$ for a perfect blackbody is given by:
 \begin{align}
@@ -888,7 +905,7 @@ The spectral flux $F(\lambda)$ of the following spectra has been normalised acco
 
 As we had discussed earlier, a galaxy with an compact nucleus that has very high luminosity across a much larger range of wavelengths is called an \textit{active galaxy}. The nucleus is then called the \textit{Active Galactic Nucleus} (AGN). It is still unclear whether being active is a phase of galaxies or whether they're a distinct class of galaxies by themselves, showing less correlation with the morphology.
 
-\subsection{Common Characteristics}
+\section{Common Characteristics}
 \begin{itemize}
   \item Compact nuclei $R \lesssim 1 \ \tx{pc}$ producing high luminosity
   \item Much broader \textit{Spectral Emission Distribution} (SED) (\ref{def:SED}) in comparison to normal galaxies.
@@ -899,7 +916,7 @@ As we had discussed earlier, a galaxy with an compact nucleus that has very high
 
 \vspace{1em}
 
-\begin{wrapfigure}[12]{r}{0.4\textwidth}
+\begin{wrapfigure}[10]{r}{0.4\textwidth}
   \vspace{-2em}
   \centering
   \includegraphics[width=0.38\textwidth]{images/active sed 3c.png}
@@ -920,7 +937,7 @@ where $\alpha$ is the spectral index.
 
 \ti{Note: The gap in the SED in Fig.~\ref{fig:SED 3C} around where the peak should be is caused due to interstellar absorption in our own galaxy. The so-called EUV Dark Zone is due to absorption by galactic neutral hydrogen H\RN{1} in the Milky Way.} \red{NOT SURE ABOUT THIS.}
 
-\subsection{Classification of Extended Radio Sources}
+\section{Classification of Extended Radio Sources}
 
 \ti{Fanaroff-Riley Type \RN{1}} (FR\RN{1}) are brightest closest to the core and surface brightness decreases outwards, while for FR\RN{2}, the surface brightness is higher further from the core, and they have higher luminosities in general.
 
@@ -933,7 +950,7 @@ where $\alpha$ is the spectral index.
 
 As can be seen in the FN\RN{2} example, most often, only one of the jets is visible, with the other being very weak or non-existent.
 
-\subsection{Source of Energy Spectrum}
+\section{Source of Energy Spectrum}
 
 For eq.~\ref{eq:AGN flux power law}, over a broad range of wavelengths, $\alpha \sim 0.7$ (\ref{eq:AGN flux power law}) for extended components and $\alpha \sim 0$ for the compact core. Radio emission is often linearly polarised (degree of polarisation upto $\sim 30\%$ or more). This suggests that the radiation is caused by \href{https://en.wikipedia.org/wiki/Synchrotron_radiation}{synchotron radiation}, where relativistic (at speeds $\ge 0.1c$) electrons are subject to magnetic fields. If this is to be the primary source of the energy spectrum, to produce wavelengths in the cm range, the electrons need to be highly relativistic, necessitating extremely efficient processes of particle acceleration.
 
@@ -941,8 +958,33 @@ For eq.~\ref{eq:AGN flux power law}, over a broad range of wavelengths, $\alpha 
 
 The characteristic time $t_\tx{cool}$ in which a relativistic electron loses its energy is comparable to the age of the sources for low-frequency radio emissions. However, for high-frequency emissions, like those in the optical range, the lifetimes are considerably smaller than the age of the sources and the distance spanned by the complete structure including all the extended sources. This means that the particle acceleration has to happen locally in the extended sources as well, since they don't live long enough to travel from the core.
 
-\section{Quasars}
+\vspace{1em}
+
+The classification of AGNs can be mostly understood, to a first approximation, by geometric considerations. The emissions have a preffered axis, the one vertical to the accreting disk of the central Super Massive Black Hole. To help with understanding the classification, we go over the outline of the unified model describing them.
+
+\section{Outline of Unified Model}
+
+\begin{wrapfigure}[15]{r}{0.4\textwidth}
+  \vspace{-2em}
+  \centering
+  \includegraphics[width=0.38\textwidth]{images/agn unified.png}
+  \caption{\small Schematic of the current understanding of unification of AGN types. The green arrows indicate lines-of-sight to observers, labelled with characteristic AGN class.}
+\end{wrapfigure}
+
+Surrounding the central supermassive black hole is an accretion disk which emits the bulk part of the optical and UV continuum emission. The central region around the accretion disk is the source of most of the X-ray radiation. Gas clouds above and below the accretion disk are responsible for the broad emission lines (these clouds move at highly variable speeds from 1,000 to 10,000 km/s). In the plane of the disk, a distribution of gas and dust is present, which can absorb radiation from the inner region of the AGN. The appearance of the AGN depends on the direction of line-of-sight relative to the disk axis. Broad line emissions might be fully obscured for an observer in the plane of the disk. In contrast, the gas responsible for the narrow emission lines is located at much larger distances from the black hole, so that it cannot be fully hidden by the obscuring `torus'.
+
+\vspace{1em}
+
+The radio jets are launched very close to the central black hole along the direction of the disk axis. The emission from these jets is highly anisotropic, because the velocity in the inner part of the jets is close to the speed of light; then, according to the theory of Special Relativity, the jet emission is strongly beamed in the direction of jet motion. This implies that the appearance of the jet depends on how close the line-of-sight to an observer is to the jet axis. If the jet points almost directly at the observer, the jet emission can outshine all the other radiation from the AGN. With this information, we proceed to the classification of AGNs:
+
+\section{AGN Zoology}
+
+\subsection{Quasars}
 Point-like objects similar to stars but having spectra quite unlike stars, these \ti{quasi-stellar radio sources} (QSRs) or \ti{quasi-stellar objects} (QSOs) are the most luminous AGNs. They were discovered by identifying radio sources with point-like optical sources. They have wide broadband emissions with variability time-scale differing for different objects and wavelengths.
+
+\vspace{1em}
+
+The flux of the source varies across almost all wavelengths and so does the variability time-scale. In general, it is observed that the variability time-scale of the radiation is smaller and amplitude larger, at higher frequencies. The optical spectrum of quasars is very blue, most at redshifts $z \lesssim 2$ having $U - B < -0.3$. Additionally, very broad emission lines are characteristic of the optical and UV spectrum, often with FWHM $\sim 10,000$ km/s, while narrower emission lines still have widths of several 1,000 km/s, still broader than typical velocities of galaxies.
 
 % ===============================================================================================================
 
