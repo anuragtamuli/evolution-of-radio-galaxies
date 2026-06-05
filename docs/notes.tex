@@ -1,5 +1,6 @@
 \documentclass[a4paper,11pt]{report}
 \usepackage{usual}
+\usepackage{booktabs} % for prettier tables apparently
 \usepackage{caption} % caption width adjustment
 \usepackage{ulem} % wavy underlines ftw
 \usepackage{framed} % for boxing text
@@ -27,6 +28,10 @@
 \newcommand{\tx}[1]{\text{#1}}
 
 \newcommand{\tsim}{$\sim$}
+
+\newcommand{\lightmidrule}{
+\arrayrulecolor{gray!40}\midrule\arrayrulecolor{black}
+}
 
 % ===============================================================================================================
 
@@ -993,15 +998,26 @@ In modern terminology, QSOs encompass both normal and radio quiet quasars becaus
 \subsection{Seyfert Galaxies}
 These were the first detected AGNs and named after Carl Seyfert who classified them in 1943 as distinct. Their nuclear luminosities are considerably lower than QSOs and optically they are usually spiral galaxies with an extraordinarily bright core. They have emission lines stronger and broader than typical velocities in galaxies. The classical Seyfert 1 galaxy is NGC 4151, while NGC 1068 is a typical Seyfert 2 galaxy.
 
+\begin{figure}[h]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \captionsetup{width=0.90\textwidth}
+    \includegraphics[width=0.90\textwidth]{images/NGC 4151 (Seyfert Type 1).png}
+    \caption{\small Three images at increasing exposure times of NGC 4151, a Seyfert Type 1 galaxy.}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \captionsetup{width=0.90\textwidth}
+    \includegraphics[width=0.90\textwidth]{images/NGC 1068 (Seyfert Type 2).png}
+    \caption{\small NGC 1068 is a typical Seyfert Type 2 galaxy at a distance of 15 Mpc from us.}
+  \end{minipage}
+\end{figure}
+
 \vspace{1em}
 
 They can be subclassified into Seyfert Type 1 and Type 2 galaxies. Seyfert Type 1 galaxies have both broad and narrow (relatively) emissions, the narrow emissions being \ti{forbidden lines}\footnote{Spectral lines that can only be produced in very low density; they cannot be produced on Earth. Refer to Sec.~3.2.1 in Ref.~\ref{book:jones}.} with widths around $\sim 400$ km/s (still much larger than characteristic velocities of normal galaxies). The region emitting these is called the \ti{narrow-line region}. The broader lines consists of \ti{permitted lines} only, with widths $\sim 10,000$ km/s, emitted from a region known as the \ti{broad-line region}.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.48\textwidth]{images/cygnus A.png} \includegraphics[width=0.48\textwidth]{images/centaurus A.png}
-  \caption{\small hi}
-\end{figure}
+\vspace{1em}
 
 The optical spectrum of the nucleus of Seyfert 1 galaxies is very similar to that of QSOs. A smooth transition exists between (radio-quiet) QSOs and Seyfert 1 galaxies. Formally, these two classes of AGNs are separated at an absolute magnitude of $\MB = -21.5 + 5\log h$. The separation of Seyfert 1 galaxies and QSOs is historical since these two categories were introduced only because of the different methods of discovering them. However, except for the different core luminosity, no fundamental physical difference seems to exist. Often both classes are combined under the name Type 1 AGNs.
 
@@ -1013,7 +1029,100 @@ Low-Ionization Nuclear Emission-line Regions (LINERs) are the least lumnious and
 Their spectra is quite similar to low-density warm ionized gas in early-type galaxies, with the emission region being spatially extended (ruling out emission from the core). The regions responsible for the emissions is the only thing separating the two and the position of LINERs as AGNs or as a distinct subtype of AGNs is scrutinized.
 
 \subsection{Radio Galaxies}
-Radio galaxies are elliptical galaxies with an active nucleus. Characteristic radio galaxies are Cygnus A and Centaurus A.
+Radio galaxies are elliptical galaxies with an active nucleus. Characteristic radio galaxies are Cygnus A and Centaurus A. Radio galaxies are also distinguished as those with and without broad emission lines: \textit{broad-line radio galaxies} (BLRG) and \textit{narrow-line radio galaxies} (NLRG), respectively. In principle, the two types of radio galaxies can be considered as radio-loud Seyfert 1 and Seyfert 2 galaxies. They can also be divided into FR \RN{1} and FR \RN{2} sources according to their radio morphology.
+
+\begin{figure}[h]
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \captionsetup{width=0.90\textwidth}
+    \includegraphics[width=0.90\textwidth]{images/cygnus A.png}
+    \caption{\small Cygnus A was the very first luminous active galaxy known. We can see the narrow jet and counter-jet connecting the core to the two radio lobes.}
+  \end{minipage}%
+  \begin{minipage}{0.5\textwidth}
+    \centering
+    \captionsetup{width=0.90\textwidth}
+    \includegraphics[width=0.90\textwidth]{images/centaurus A.png}
+    \caption{\small One of the first active galaxies discovered, Centaurus A is a well-known radio galaxy with distinctly visible dust lane.}
+  \end{minipage}
+\end{figure}
+\red{wanna make these wrapfigures instead but will do later}
+
+\subsection{OVVs}
+\textit{Optically Violently Variables} (OVVs) are a subclass of QSOs characterized by very strong and rapid variability in its optical radiation. The flux of these sources can vary significantly on time-scales of days. They also have relatively high polarization of optical light (few \%; QSOs usually have <1\%) and usually have strong radio emissions. Their radiation also varies in other wavelength regions besides the optical, with shorter time-scales and larger amplitudes at higher frequencies.
+
+\subsection{BL Lac Objects}
+The class of AGNs called BL Lac objects (or short: BL Lacs) is named after its prototypical source BL Lacertae. They are AGNs like OVVs with very strongly varying radiation but without strong emission or absorption lines. Their optical radiation is highly polarized. BL Lacs and OVVs are collectively called \textit{blazars} as emission lines are sometimes observed from these BL Lacs during epochs of low luminosity which makes them appear like BL Lacs. All known blazars are radio sources and they also exhibit highly energetic and strongly variable $\gamma$-radiation.
+
+
+
+% ===============================================================================================================
+
+\begin{table}[ht!]
+\centering
+\footnotesize
+\caption{Overview of the classification of active galactic nuclei}
+\begin{tabularx}{\textwidth}{lXXXXX}
+\toprule
+ & Normal galaxy & Radio galaxy & Seyfert galaxy & Quasar & Blazar \\
+\lightmidrule
+
+Example
+& Milky Way
+& M87, Cygnus A
+& NGC 4151
+& 3C 273
+& BL Lac, 3C 279 \\
+\lightmidrule
+
+Galaxy type
+& Spiral
+& Elliptical, Irregular
+& Spiral
+& Irregular
+& Elliptical? \\
+\lightmidrule
+
+$L_{\mathrm{AGN}}/L_\odot$
+& $<10^4$
+& $10^6$--$10^8$
+& $10^8$--$10^{11}$
+& $10^{11}$--$10^{14}$
+& $10^{11}$--$10^{14}$ \\
+\lightmidrule
+
+$M_{\mathrm{BH}}/M_\odot$
+& $4\times10^6$
+& $3\times10^9$
+& $10^6$--$10^9$
+& $10^6$--$10^9$
+& $10^6$--$10^9$ \\
+\lightmidrule
+
+Radio emission
+& Weak
+& Core, jets, lobes
+& Only $\sim 5\%$ radio-loud
+& Only $\sim 5\%$ radio-loud
+& Strong, short-time variable \\
+\lightmidrule
+
+X-ray emission
+& Weak
+& Strong
+& Strong
+& Strong
+& Strong \\
+\lightmidrule
+
+Gamma emission
+& Weak
+& Weak
+& Medium
+& Strong
+& Strong \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 % ===============================================================================================================
 
