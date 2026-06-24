@@ -1,6 +1,8 @@
 \documentclass[a4paper,11pt]{report}
 \usepackage{usual}
+\usepackage{pdflscape} % for landscape tables
 \usepackage{booktabs} % for prettier tables apparently
+\usepackage{makecell} % for vertical centering of table rows
 \usepackage{caption} % caption width adjustment
 \usepackage{ulem} % wavy underlines ftw
 \usepackage{framed} % for boxing text
@@ -28,10 +30,19 @@
 \newcommand{\tx}[1]{\text{#1}}
 
 \newcommand{\tsim}{$\sim$}
+\newcommand{\arcs}{^{\prime \prime}}
+\newcommand{\hr}{$^\tx{h}$}
+\newcommand{\mn}{$^\tx{m}$}
+\newcommand{\dg}{$^\circ$}
 
 \newcommand{\lightmidrule}{
 \arrayrulecolor{gray!40}\midrule\arrayrulecolor{black}
 }
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+
+% ===============================================================================================================
+\renewcommand{\tabularxcolumn}[1]{>{\centering\arraybackslash}m{#1}}
 
 % ===============================================================================================================
 
@@ -912,20 +923,20 @@ As we had discussed earlier, a galaxy with an compact nucleus that has very high
   \item Compact nuclei $R \lesssim 1 \ \tx{pc}$ producing high luminosity
   \item Much broader \textit{Spectral Emission Distribution} (SED) (\ref{def:SED}) in comparison to normal galaxies.
   \item Stronger and broader emission (and absorption) lines in comparison to other galaxies.
-  \item Peak emission in X-ray or ultraviolent regions usually. This is referred to as the `big blue bump'.
+  \item Peak emission in X-ray or ultraviolet regions usually. This is referred to as the `big blue bump'.
   \item They often have extended lobes connected to the nucleus by jets.
 \end{itemize}
 
 \vspace{1em}
 
-\begin{wrapfigure}[10]{r}{0.4\textwidth}
+\begin{wrapfigure}[12]{r}{0.4\textwidth}
   \vspace{-2em}
   \centering
   \includegraphics[width=0.38\textwidth]{images/active sed 3c.png}
   \caption{\small SED of an active galaxy (quasar) 3C 273. We can observe the big blue bump in the X-ray and UV regions. Source: Ref.~\ref{book:jones}} \label{fig:SED 3C}
 \end{wrapfigure}
 
-Active galaxies are classified into quasars, Seyfert galaxies, blazars and radio galaxies. The morphology of AGNs usually includes a compact central source and other extended sources, usually nearly symmetric double sources in the form of radio lobes. These lobes are often connected to the central core by jets, which are emission structures of some sort.
+Active galaxies are classified into quasars, Seyfert galaxies, blazars, radio galaxies and LINERs. The morphology of AGNs usually includes a compact central source and other extended sources, usually nearly symmetric double sources in the form of radio lobes. These lobes are often connected to the central core by jets, which are emission structures of some sort.
 
 \vspace{1em}
 
@@ -977,7 +988,7 @@ Surrounding the central supermassive black hole is an accretion disk which emits
 
 \vspace{1em}
 
-The radio jets are launched very close to the central black hole along the direction of the disk axis. The emission from these jets is highly anisotropic, because the velocity in the inner part of the jets is close to the speed of light; then, according to the theory of Special Relativity, the jet emission is strongly beamed in the direction of jet motion. This implies that the appearance of the jet depends on how close the line-of-sight to an observer is to the jet axis. If the jet points almost directly at the observer, the jet emission can outshine all the other radiation from the AGN. With this information, we proceed to the classification of AGNs:
+The radio jets are launched very close to the central black hole along the direction of the disk axis. The emission from these jets is highly anisotropic, because the velocity in the inner part of the jets is close to the speed of light; then, according to the theory of Special Relativity, the jet emission is strongly beamed in the direction of jet motion. This implies that the appearance of the jet depends on how close the line-of-sight to an observer is to the jet axis. If the jet points almost directly at the observer, the jet emission can outshine all the other radiation from the AGN. With this information, we proceed to the classification of AGNs.
 
 \section{AGN Zoology}
 
@@ -996,7 +1007,7 @@ Since quasars are unusually blue, another method of identifying them was employe
 In modern terminology, QSOs encompass both normal and radio quiet quasars because radio quiet quasars also have radio emissions at sufficiently high sensitivities. Radio quiet quasars are expected to be nearly 10 times more abundant than radio quiet quasars. QSOs are the most luminous AGNs with core luminosities going as high as 1000 times more than an $L$*-galaxy\footnote{$L*$-galaxy refers to a galaxy with a characteristic luminosity $L$* such that the number density of galaxies with higher luminosities falls exponentially. 90\% galaxies have luminosities within 0.1 to 2.3 $L$*. Further details in Sec.~3.10 of Ref.~\ref{book:schneider}.}. For quasars of lower $L$, their host galaxies were identified and they were spatially resolved
 
 \subsection{Seyfert Galaxies}
-These were the first detected AGNs and named after Carl Seyfert who classified them in 1943 as distinct. Their nuclear luminosities are considerably lower than QSOs and optically they are usually spiral galaxies with an extraordinarily bright core. They have emission lines stronger and broader than typical velocities in galaxies. The classical Seyfert 1 galaxy is NGC 4151, while NGC 1068 is a typical Seyfert 2 galaxy.
+These were the first detected AGNs and named after Carl Seyfert who classified them in 1943 as distinct. Their nuclear luminosities are considerably lower than QSOs and optically they are usually spiral galaxies with an extraordinarily bright core. They have emission lines stronger and broader than typical velocities in galaxies. The classical Seyfert Type 1 galaxy is NGC 4151, while NGC 1068 is a typical Seyfert Type 2 galaxy.
 
 \begin{figure}[h]
   \begin{minipage}{0.5\textwidth}
@@ -1140,6 +1151,296 @@ The spectra of some different AGNs are displayed below:
   \centering
   \includegraphics[width=0.9\textwidth]{images/seyfert2spectra.png}
 \end{figure}
+
+\red{need to add diagram for equivalent width and kinda need to rework the whole thing, I want to make it a lot more pedagogical.} \\
+\red{add more explanation about equivalent width, use wiki, that's helpful, also $\lambda$ is not a parameter I think.}
+
+\chapter{Working with Sample Data}
+
+\begin{table}[hb!]
+    \small
+    \renewcommand{\arraystretch}{1.6}
+    \rotatebox{90}{%
+        \begin{minipage}{0.98\textheight}
+        \caption{Overview of relevant radio surveys}
+        \begin{center}
+        \begin{tabular}{%
+            >{\bfseries}l   % Survey
+            l               % Telescope
+            p{3cm}               % Freq.
+            c               % Bandw.
+            p{3cm}               % Sens.
+            p{3cm}               % Resol.
+            c               % Area
+            p{5.5cm}        % Limits (needs wrapping)
+        }
+            \toprule
+            Survey &
+            Telescope &
+            Freq.\ (MHz) &
+            Bandw.\ (MHz) &
+            Sens.\ (mJy) &
+            Resol.\ ($''$) &
+            Area (deg$^2$) &
+            \multicolumn{1}{c}{Limits (RA/Dec)} \\
+            \lightmidrule
+            
+            FIRST* & VLA & 1356, 1435 & 21 & 1 & 5.4 & 10{,}575 &
+                N: 8\hr--17\hr, $-8^\circ$ to $58^\circ$ \newline
+                S: 21\hr20\mn--3\hr20\mn, $-2.5^\circ$ to $1.6^\circ$ \\
+            \lightmidrule
+            
+            NVSS & VLA & 1400 & 21 & 2.25 (I) \newline 1.25 (Q,U) & 45 & ${\sim}82\%$ sky &
+                Dec: $-40^\circ$ to $90^\circ$ \\
+            \lightmidrule
+            
+            VLASS & EVLA & 3000 & 2000 & ${\sim}0.6$ & ${\sim}2.5$ & 33{,}885 &
+                Dec: $-40^\circ$ to $90^\circ$ \\
+            \lightmidrule
+            
+            TGSS & GMRT & 150 & 16 & 25 & $25/\cos(\delta - 19^\circ)^{\dagger}$ & 36,900 &
+                Dec: $-53^\circ$ to $90^\circ$ \\
+            \lightmidrule
+            
+            LOTSS & LOFAR & 144 & 48 & 0.5 & $\sim$5 & 20,626 & Dec: 0\dg to 90\dg \\
+            \lightmidrule
+            
+            RACS & ASKAP & 887.5 \newline 1367.5 \newline 1655.5 & 288 & 1.25 \newline 1.00 \newline 1.00 & 15 \newline 10 \newline 8 & 34,240 & Dec: -90\dg to 41\dg \\
+            
+            \bottomrule
+        \end{tabular}
+        \end{center}
+
+        \vspace{4pt}
+        \footnotesize *Unsure whether this survey used VLA or EVLA or both. \\
+        \footnotesize $^{\dagger}$Only when $\delta \ge 19^\circ$; otherwise the resolution is $25\arcs$.
+        \end{minipage}%
+    }
+\end{table}
+
+% ===============================================================================================================
+
+$*$ \red{no idea if the FIRST is the old survey or the EVLA one, need to figure out.}
+
+\begin{table}[ht!]
+  \centering
+  \small
+  \caption{Data availability for the given samples}
+  
+  \begin{tabularx}{\textwidth}{CCCCCCC}
+    
+    \toprule 
+    ID & RA & DEC & z & Surveys & Resolution & Sensitivity \\
+          & (h:m:s) & (d:m:s) & & & (best) & (best; mJy) \\
+    \lightmidrule
+    
+    J031333 & 03:13:33 & -06:31:58 & 0.389 & FIRST, NVSS, VLASS, RACS(l,m,h) & & \\
+    \lightmidrule
+    
+    J091953 & 09:19:53 & 41:39:11 & 0.774 & FIRST, NVSS, RACS(m,h)
+    
+    2 & 
+    
+  \end{tabularx}
+  
+\end{table}
+
+\clearpage
+
+\section{Images of Samples}
+
+The following images have contours plotted on them according to the legend below:
+\begin{itemize}
+  \item white: FIRST
+  \item magenta: NVSS
+  \item green: VLASS
+  \item blue: TGSS
+  \item pink: LOTSS
+  \item cyan: RACS low
+  \item red: RACS mid
+  \item yellow: RACS high
+\end{itemize}
+
+\subsection*{J031333-063158}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J031333_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J031333_yesracs.png}
+    \caption*{\small RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J091953+413911}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J091953_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J091953_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J092109+453857}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J092109_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J092109_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J092632+543847}
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{width=0.45\textwidth}
+  \includegraphics[width=0.45\textwidth]{images/J092632_noracs.png}
+  \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue), LOTSS (pink)}
+\end{figure}
+
+\subsection*{J100411+523025}
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{width=0.45\textwidth}
+  \includegraphics[width=0.45\textwidth]{images/J100411_noracs.png}
+  \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS$^\dagger$ (blue), LOTSS (pink)}
+\end{figure}
+
+$^\dagger$ TGSS detected contour only at $1.5 \sigma$
+
+\subsection*{J103025+543847}
+
+\begin{figure}[H]
+  \centering
+  \captionsetup{width=0.45\textwidth}
+  \includegraphics[width=0.45\textwidth]{images/J103025_noracs.png}
+  \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue), LOTSS (pink)}
+\end{figure}
+
+\subsection*{J104635+134503}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J104635_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J104635_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J114604+334552}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J114604_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J114604_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J133817+481641}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J133817_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J133817_yesracs.png}
+    \caption*{\small TGSS (blue), LOTSS (pink), RACS mid (red)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J142041+015931}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J142041_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J142041_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J152030+460754}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J152030_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J152030_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J152040+421111}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J152040_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J152040_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+\subsection*{J170112+353353}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J170112_noracs.png}
+    \caption*{\small FIRST (white), NVSS (magenta), VLASS (green), TGSS$^\dagger$ (blue)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}{0.45\textwidth}
+    \includegraphics[width=\textwidth]{images/J170112_yesracs.png}
+    \caption*{\small LOTSS (pink), RACS low (cyan), RACS mid (red), RACS high (yellow)}
+  \end{minipage}
+\end{figure}
+
+$^\dagger$ TGSS detected contour only at $1.5 \sigma$
 
 % ===============================================================================================================
 
